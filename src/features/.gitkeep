@@ -1,0 +1,15 @@
+/**
+ * Placeholder for the first feature module.
+ *
+ * Feature structure (use this as a template for each new feature):
+ *
+ * src/features/<feature-name>/
+ * ├── api/           — TanStack Query hooks (useGetX, useCreateX, etc.)
+ * ├── components/    — Feature-specific UI components
+ * ├── hooks/         — Feature-specific custom hooks
+ * ├── store/         — Zustand store (if needed)
+ * ├── types/         — Feature-specific TypeScript types
+ * └── index.ts       — Public exports from this feature
+ */
+
+export {};

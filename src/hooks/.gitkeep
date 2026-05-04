@@ -1,0 +1,6 @@
+/**
+ * Global custom hooks.
+ * Feature-specific hooks should live inside `src/features/<name>/hooks/`.
+ */
+
+export {};

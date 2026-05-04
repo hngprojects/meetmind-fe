@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+
+# Generated files
+pnpm-lock.yaml
+*.lock
+
+# Coverage
+coverage/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Env
+*.local
+.env*

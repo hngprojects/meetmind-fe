@@ -1,0 +1,30 @@
+{
+  // Suppress "Unknown at rule" warnings for Tailwind v4 custom at-rules
+  // (@theme, @theme inline, @source, @utility, @variant, @custom-variant)
+  "css.lint.unknownAtRules": "ignore",
+
+  // Point the Tailwind IntelliSense extension at the CSS entry point
+  "tailwindCSS.experimental.configFile": "src/index.css",
+
+  // Tell the extension to look for Tailwind classes in these file types
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+
+  // Autocomplete Tailwind classes inside cn() and cva() calls
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+
+  // Keep editor consistent with project .prettierrc
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // ESLint flat config support
+  "eslint.useFlatConfig": true
+}
