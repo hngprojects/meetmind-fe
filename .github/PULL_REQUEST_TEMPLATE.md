@@ -1,52 +1,42 @@
-## 📝 Description
+# **Description**
 
-<!--
-Please include a summary of the change and which issue is fixed.
-List any dependencies that are required for this change.
--->
+<!--- Describe your changes in detail -->
 
-Fixes # (issue)
+This PR ...
 
-## 🚀 Type of Change
+# **Changes Proposed**
 
-- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] ✨ New feature (non-breaking change which adds functionality)
-- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 🧹 Refactor (code improvement without functional changes)
-- [ ] 📝 Documentation update
+## **What were you told to do?**
 
-## 🧪 How Has This Been Tested?
+## **What did you do?**
 
-<!--
-Please describe the tests that you ran to verify your changes.
-Mention if you've added new unit tests or performed manual UI testing.
--->
+## Types of changes
 
-- [ ] ✅ Unit Tests (`pnpm test`)
-- [ ] ✅ Manual Testing (Chrome/Safari/Firefox)
-- [ ] ✅ Responsive Design Check (Mobile/Tablet/Desktop)
+<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
 
-## 📸 Screenshots / Videos (if applicable)
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Chore (changes that do not relate to a fix or feature and don't modify src or test files)
 
-<!--
-For UI changes, please provide a screenshot or a short screen recording.
-This helps reviewers understand the visual impact immediately.
--->
+# **Check List**
 
-| Before      | After      |
-| :---------- | :--------- |
-| ![Before]() | ![After]() |
+<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
+<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 
-## 🏁 Definition of Done Checklist:
+- [x] My code follows the code style of this project.
+- [x] This PR does not contain plagiarized content.
+- [x] The title and description of the PR are clear and explain the approach.
+- [x] I am making a pull request against the **dev branch** (left side).
+- [x] My commit message style matches our requested structure.
+- [x] My code additions will not fail code linting checks or unit tests.
+- [x] I am only making changes to files I was requested to.
 
-- [ ] 🎯 My code follows the project's style guidelines.
-- [ ] 🔍 I have performed a self-review of my own code.
+---
 
-* [ ] 💬 I have commented on my code, particularly in hard-to-understand areas.
+# Images
 
-- [ ] 📖 I have updated the documentation accordingly.
-- [ ] ⚠️ My changes generate no new warnings.
-- [ ] 🧪 I have added tests that prove my fix is effective or my feature works.
-- [ ] 💯 All new and existing tests pass locally.
-- [ ] 📱 The UI is responsive and follows the design system.
-- [ ] ♿ Accessibility (a11y) has been considered.
+<!-- Add Screenshots of: -->
+
+- The live component worked on
+- Linting check (run pnpm lint)
