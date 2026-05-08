@@ -26,5 +26,9 @@
   },
 
   // ESLint flat config support
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
 }
