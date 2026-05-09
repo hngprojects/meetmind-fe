@@ -28,7 +28,7 @@ const wideTestimonials = [
 export default function Testimonials() {
   return (
     <section className="py-16">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="flex flex-col items-center gap-4">
           <p className="text-[#3F4555] text-xs">Testimonials</p>
           <h2 className="text-[#0F172A] text-3xl font-semibold text-center">

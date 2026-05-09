@@ -14,7 +14,7 @@ import videoIcon from './images/video-recorder-icon.svg';
 export default function FeaturesGrid() {
   return (
     <section className="py-12">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-20">
         <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
           Features
         </h2>

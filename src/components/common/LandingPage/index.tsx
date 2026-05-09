@@ -1,6 +1,7 @@
 import CTASection from './CTASection';
 import DashboardPreview from './DashboardPreview';
 import FeaturesGrid from './FeaturesGrid';
+import Footer from './Footer';
 import HeroSection from './HeroSection';
 import HowItWorks from './HowItWorks';
 import Navbar from './Navbar';
@@ -18,6 +19,7 @@ export default function LandingPage() {
       <TemperatureControl />
       <Testimonials />
       <CTASection />
+      <Footer />
     </div>
   );
 }
