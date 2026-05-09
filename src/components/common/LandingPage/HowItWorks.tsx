@@ -76,7 +76,7 @@ export default function HowItWorks() {
 
         {/* Interview Smarter Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center mt-20 mx-auto gap-8">
-          <div className="max-w-full md:w-97.5 h-72.5 overflow-hidden rounded-xl">
+          <div className="max-w-full h-100 md:w-97.5 md:h-72.5 overflow-hidden rounded-xl">
             <img
               src={interviewSmarter}
               alt="Professional conducting a video interview"

@@ -18,14 +18,14 @@ export default function FeaturesGrid() {
         <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
           Features
         </h2>
-        <p className="mt-2 text-sm md:text-md text-[#5E6470] text-center max-w-lg mx-auto">
+        <p className="mt-2 text-md md:text-sm text-[#5E6470] text-center max-w-lg mx-auto">
           Every part of the hiring workflow handled by a single intelligent
           participant.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 md:grid-rows-4 gap-6">
+        <div className="mt-12 grid grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-4 gap-6">
           {/* Row 1–2 Col 1 (spans 2 rows) */}
-          <div className="row-span-2 bg-white rounded-2xl p-6 flex flex-col items-center gap-4">
+          <div className="row-start-1 row-span-2 bg-white rounded-2xl p-6 flex flex-col items-center gap-4">
             <img
               src={realTimeScorecard}
               className="w-full h-50 object-cover rounded-lg mb-4"
@@ -40,7 +40,7 @@ export default function FeaturesGrid() {
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Real-time scorecard tracking
               </h3>
-              <p className="text:sm md:text-lg text-[#5E6470] mt-2">
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Live coverage bars for every competency on your scorecard. Know
                 exactly what's been covered and what hasn't - without taking
                 notes
@@ -49,7 +49,7 @@ export default function FeaturesGrid() {
           </div>
 
           {/* Row 1 Col 2 */}
-          <div className="bg-white rounded-2xl p-6 flex justify-center items-center gap-16">
+          <div className="row-start-3 md:row-start-1 bg-white rounded-2xl p-6 flex justify-center items-center gap-16">
             <div>
               <img
                 src={checklistIcon}
@@ -59,19 +59,19 @@ export default function FeaturesGrid() {
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Pre-assigned task queue
               </h3>
-              <p className="text:sm md:text-lg text-[#3F4555] mt-2">
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Queue instructions before the call begins.
               </p>
             </div>
             <img
               src={preAssignedTask}
-              className="w-50 h-36 object-cover rounded-xl shrink-0"
+              className="w-44 h-36 object-cover rounded-xl shrink-0"
               alt="Pre-assigned task queue interface"
             />
           </div>
 
           {/* Row 2 Col 2 */}
-          <div className="bg-white rounded-2xl p-6 flex items-center gap-4">
+          <div className="row-start-4 md:row-start-2 bg-white rounded-2xl p-6 flex items-center gap-4">
             <div>
               <img
                 src={flagIcon}
@@ -81,22 +81,22 @@ export default function FeaturesGrid() {
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Role briefing & red flags
               </h3>
-              <p className="text:sm md:text-lg text-[#3F4555] mt-2">
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Meet Mind internalizes warning signs to watch for.
               </p>
             </div>
             <img
               src={roleBriefing}
-              className="w-50 h-36 object-cover rounded-xl shrink-0"
+              className="w-44 h-36 object-cover rounded-xl shrink-0"
               alt="Role briefing & red flags interface"
             />
           </div>
 
           {/* Row 3 Col 1 */}
-          <div className="bg-white rounded-2xl p-6 flex items-center gap-8">
+          <div className="row-start-7 md:row-start-3 bg-white rounded-2xl p-6 flex items-center gap-8">
             <img
               src={structuredSummary}
-              className="w-50 h-36 object-cover rounded-xl shrink-0"
+              className="w-44 h-36 object-cover rounded-xl shrink-0"
               alt="Structured summary interface"
             />
             <div>
@@ -108,17 +108,17 @@ export default function FeaturesGrid() {
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Structured summary
               </h3>
-              <p className="text:sm md:text-lg text-[#3F4555] mt-2">
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Organized notes ready immediately after.
               </p>
             </div>
           </div>
 
           {/* Row 4 Col 1 */}
-          <div className="bg-white rounded-2xl p-6 flex items-center gap-8">
+          <div className="row-start-8 md:row-start-4 bg-white rounded-2xl p-6 flex items-center gap-8">
             <img
               src={timedGapAlerts}
-              className="w-50 h-36 object-cover rounded-xl shrink-0"
+              className="w-44 h-36 object-cover rounded-xl shrink-0"
               alt="Timed gap alerts interface"
             />
             <div>
@@ -130,14 +130,14 @@ export default function FeaturesGrid() {
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Timed gap alerts
               </h3>
-              <p className="text:sm md:text-lg text-[#3F4555] mt-2">
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Set thresholds to flag missed culture fit questions.
               </p>
             </div>
           </div>
 
           {/* Row 3–4 Col 2 (spans 2 rows) */}
-          <div className="row-span-2 row-start-3 col-start-2 bg-white rounded-2xl p-6 flex flex-col items-start gap-4">
+          <div className="row-start-5 row-span-2 md:row-start-3 md:col-start-2 bg-white rounded-2xl p-6 flex flex-col items-start gap-4">
             <img
               src={zoomMeetTeams}
               className="w-full h-50 object-cover rounded-lg mb-4"
@@ -152,7 +152,7 @@ export default function FeaturesGrid() {
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Zoom, Meet & Teams support
               </h3>
-              <p className="text:sm md:text-lg text-[#3F4555] mt-2">
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Works wherever you already run interviews. Meet Mind joins as a
                 named participant - no recordings required, no integration to
                 install.
