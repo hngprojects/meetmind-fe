@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* SDK */}
           <div className="relative flex items-center">
             <a
-              href="#sdk"
+              href=""
               className="flex items-center gap-1 text-[#0F172A] text-sm font-medium cursor-pointer"
             >
               <span>SDK</span>

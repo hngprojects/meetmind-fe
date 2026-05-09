@@ -79,7 +79,7 @@ export default function HowItWorks() {
           <div className="max-w-full md:w-97.5 h-72.5 overflow-hidden rounded-xl">
             <img
               src={interviewSmarter}
-              alt="Interview"
+              alt="Professional conducting a video interview"
               className="w-full h-full object-cover scale-110"
             />
           </div>

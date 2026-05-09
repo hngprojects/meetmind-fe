@@ -29,14 +29,14 @@ export default function HeroSection() {
           <img src={chat} alt="Google Chat" className="w-10 md:w-22" />
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <a
-              href="#get-early-access"
+              href=""
               className="px-6 py-3 bg-[#02505E] text-white font-semibold rounded-lg text-base hover:bg-[#FFFFFF] hover:text-[#013A44] hover:border hover:border-[#DADADA] transition-colors"
             >
               Get early access
             </a>
 
             <a
-              href="#watch-a-demo"
+              href=""
               className="px-8 py-3 border border-[#DADADA] text-[#02505E] font-semibold rounded-lg text-base hover:bg-[#02505E] hover:text-white transition-colors inline-flex items-center gap-2"
             >
               Watch a Demo
