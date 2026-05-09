@@ -1,3 +1,4 @@
+import DashboardPreview from './DashboardPreview';
 import HeroSection from './HeroSection';
 import Navbar from './Navbar';
 
@@ -6,6 +7,7 @@ export default function LandingPage() {
     <div className="bg-[#F7F9FB] pt-16">
       <Navbar />
       <HeroSection />
+      <DashboardPreview />
     </div>
   );
 }
