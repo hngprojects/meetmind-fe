@@ -1,3 +1,4 @@
+import CTASection from './CTASection';
 import DashboardPreview from './DashboardPreview';
 import FeaturesGrid from './FeaturesGrid';
 import HeroSection from './HeroSection';
@@ -16,6 +17,7 @@ export default function LandingPage() {
       <FeaturesGrid />
       <TemperatureControl />
       <Testimonials />
+      <CTASection />
     </div>
   );
 }
