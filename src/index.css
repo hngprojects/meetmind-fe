@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* ─── Geist Variable Font ─────────────────────────────────────────── */
 @font-face {
   font-family: 'Geist';
@@ -21,6 +23,7 @@
 @theme inline {
   /* Typography */
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', serif;
 
   /* Border radius */
   --radius: 0.5rem;
