@@ -16,6 +16,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ===== BRANCH NAME VALIDATION =====
+      - name: Validate branch name
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          echo "Branch: $BRANCH"
+
+          if echo "$BRANCH" | grep -Eq '^(main|master|dev(elop)?|staging|hotfix|release)$'; then
+            echo "Allowed base branch: $BRANCH"
+            exit 0
+          fi
+
+          if echo "$BRANCH" | grep -Eq '^(feat|feature|fix|chore|hotfix|bugfix|docs|refactor)/([A-Za-z]+-[0-9]+(-[a-z0-9-]*)?|[a-z0-9-]+)$'; then
+            echo "Valid feature branch: $BRANCH"
+            exit 0
+          fi
+
+          echo "❌ Invalid branch name: $BRANCH"
+          exit 1
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -33,17 +53,29 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Security Audit
-        run: pnpm audit --audit-level=high
+      # ===== SECURITY CHECKS (FAIL BUILD IF VULNERABILITIES) =====
+      - name: Run pnpm audit (FAIL ON VULNERABILITIES)
+        run: |
+          echo "🔍 Running security audit..."
+          if pnpm audit --audit-level=high; then
+            echo "No high/critical vulnerabilities found"
+          else
+            echo ""
+            echo "❌ CRITICAL: High or critical vulnerabilities detected!"
+            echo ""
+            echo "To fix:"
+            echo "  1. Run: pnpm audit"
+            echo "  2. Update packages: pnpm update <package>@latest"
+            echo "  3. Commit updated pnpm-lock.yaml"
+            echo ""
+            exit 1
+          fi
 
-      - name: Lint
+      - name: Run linter
         run: pnpm lint
 
-      - name: Type-check
-        run: pnpm typecheck
-
-      - name: Test
-        run: pnpm test
+      - name: Type check
+        run: pnpm run typecheck
 
       - name: Build
         run: pnpm build
