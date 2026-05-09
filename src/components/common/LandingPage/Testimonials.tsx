@@ -102,7 +102,7 @@ export default function Testimonials() {
           </div>
 
           {/* Darrell Steward */}
-          <div className="bg-[#FFFFFF] rounded-2xl p-6 flex flex-col">
+          <div className="md:row-start-1 md:col-start-2 bg-[#FFFFFF] rounded-2xl p-6 flex flex-col">
             <div className="flex items-center gap-3 mb-6">
               <img
                 src={darrell}
@@ -128,7 +128,7 @@ export default function Testimonials() {
           </div>
 
           {/* Bessie Cooper */}
-          <div className="row-start-4 md:row-start-2 md:row-span-2 bg-[#FFFFFF] rounded-2xl p-6 flex flex-col justify-between">
+          <div className="row-start-4 md:row-start-1 md:row-span-2 bg-[#FFFFFF] rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <img
