@@ -13,10 +13,10 @@ export default function HeroSection() {
             alt="Task List Star"
             className="h-auto w-10 md:w-16"
           />
-          <h1 className="font-serif text-4xl md:text-6xl text-[#0F172A] tracking-[-0.15rem] leading-[1.4] md:tracking-[-0.3rem] md:leading-none">
+          <h2 className="font-serif text-4xl md:text-6xl text-[#0F172A] tracking-[-0.15rem] leading-[1.4] md:tracking-[-0.3rem] md:leading-none">
             Interview better. <br />{' '}
             <span className="text-[#035A69]">Remember everything.</span>
-          </h1>
+          </h2>
           <img src={duo} alt="Google Meet" className="w-10 md:w-18" />
         </div>
         <p className="mt-2 text-sm max-w-xs md:mt-4 md:text-lg text-[#5E6470] md:max-w-lg mx-auto">

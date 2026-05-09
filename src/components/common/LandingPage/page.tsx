@@ -1,5 +1,6 @@
 import DashboardPreview from './DashboardPreview';
 import HeroSection from './HeroSection';
+import HowItWorks from './HowItWorks';
 import Navbar from './Navbar';
 
 export default function LandingPage() {
@@ -8,6 +9,7 @@ export default function LandingPage() {
       <Navbar />
       <HeroSection />
       <DashboardPreview />
+      <HowItWorks />
     </div>
   );
 }
