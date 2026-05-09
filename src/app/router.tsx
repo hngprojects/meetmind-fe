@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { HomePage } from '../pages/HomePage';
+import { PasswordCreatePage } from '../pages/PasswordCreatePage';
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'create-password',
+        element: <PasswordCreatePage />,
       },
     ],
   },
