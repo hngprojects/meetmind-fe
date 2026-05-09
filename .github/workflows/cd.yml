@@ -54,7 +54,7 @@ jobs:
             dist/ \
             ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }}:/opt/meetmind/staging/frontend/
 
-          echo "✅ Staging frontend deployed: ${{ github.sha }}"
+          echo "Staging frontend deployed successfully"
 
   # ─────────────────────────────────────────────────────────────────────────────
   # Deploy Production
@@ -104,4 +104,4 @@ jobs:
             dist/ \
             ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/opt/meetmind/production/frontend/
 
-          echo "✅ Production frontend deployed: ${{ github.sha }}"
+          echo "Production frontend deployed successfully"
