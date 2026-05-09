@@ -1,4 +1,5 @@
 import DashboardPreview from './DashboardPreview';
+import FeaturesGrid from './FeaturesGrid';
 import HeroSection from './HeroSection';
 import HowItWorks from './HowItWorks';
 import Navbar from './Navbar';
@@ -10,6 +11,7 @@ export default function LandingPage() {
       <HeroSection />
       <DashboardPreview />
       <HowItWorks />
+      <FeaturesGrid />
     </div>
   );
 }
