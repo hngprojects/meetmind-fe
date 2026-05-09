@@ -1,8 +1,10 @@
-import logo from './images/meetmind-logo.svg';
-import linkedinIcon from './images/linkedin-outline.svg';
-import facebookIcon from './images/facebook-outline.svg';
-import githubIcon from './images/github-outline.svg';
-import instagramIcon from './images/instagram-outline.svg';
+import {
+  logo,
+  linkedinIcon,
+  facebookIcon,
+  githubIcon,
+  instagramIcon,
+} from './assets';
 
 const footerColumns = [
   {
@@ -57,7 +59,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="max-w-xs">
             <div className="flex gap-6">
-              <a href="/" className="flex items-center">
+              <a href="#hero" className="flex items-center">
                 <img src={logo} alt="MeetMind Logo" className="h-8 w-auto" />
               </a>
               <p className="font-bold text-[24px]">
@@ -93,12 +95,13 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors"
+                      <button
+                        type="button"
+                        className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer"
+                        onClick={() => console.log(`${link.label} clicked`)}
                       >
                         {link.label}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>

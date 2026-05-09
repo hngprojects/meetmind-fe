@@ -27,7 +27,7 @@ const temperatureLevels = [
 
 export default function TemperatureControl() {
   return (
-    <section className="py-16">
+    <section id="temperature" className="py-16">
       <div className="max-w-7xl flex flex-col md:flex-row md:gap-24 md:items-start mx-auto px-6 md:px-16">
         <div className="flex flex-col items-start gap-2">
           {/* Section heading */}

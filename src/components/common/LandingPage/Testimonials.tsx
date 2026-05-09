@@ -1,10 +1,12 @@
-import theresa from './images/theresa-webb.png';
-import darlene from './images/darlene-robertson.png';
-import kathryn from './images/kathryn-murphy.png';
-import darrell from './images/darrell-steward.png';
-import kristin from './images/kristin-watson.png';
-import bessie from './images/bessie-cooper.png';
-import quoteIcon from './images/quote.svg';
+import {
+  theresa,
+  darlene,
+  kathryn,
+  darrell,
+  kristin,
+  bessie,
+  quoteIcon,
+} from './assets';
 
 const wideTestimonials = [
   {
@@ -27,7 +29,7 @@ const wideTestimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-16">
+    <section id="temperature" className="py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="flex flex-col items-center gap-4">
           <p className="text-[#3F4555] text-xs">Testimonials</p>

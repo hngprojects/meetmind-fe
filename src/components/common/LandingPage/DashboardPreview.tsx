@@ -1,5 +1,4 @@
-import dashboardImageDesktop from './images/dashboard-desktop.png';
-import dashboardImageMobile from './images/dashboard-mobile.png';
+import { dashboardImageDesktop, dashboardImageMobile } from './assets.ts';
 
 export default function DashboardPreview() {
   return (

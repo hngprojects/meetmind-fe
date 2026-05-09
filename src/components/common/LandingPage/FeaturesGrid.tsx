@@ -1,19 +1,21 @@
-import realTimeScorecard from './images/real-time-scorecard-tracking.svg';
-import preAssignedTask from './images/pre-assigned-task.jpg';
-import roleBriefing from './images/role-briefing-red-flag.svg';
-import structuredSummary from './images/structured-interview.jpg';
-import timedGapAlerts from './images/timed-gap-alert.jpg';
-import zoomMeetTeams from './images/zoom-chrome-image.jpg';
-import archiveIcon from './images/archive-icon.svg';
-import checklistIcon from './images/checklist-icon.svg';
-import flagIcon from './images/flag-icon.svg';
-import bookIcon from './images/book-icon.svg';
-import shieldIcon from './images/alert-shield-icon.svg';
-import videoIcon from './images/video-recorder-icon.svg';
+import {
+  realTimeScorecard,
+  preAssignedTask,
+  roleBriefing,
+  structuredSummary,
+  timedGapAlerts,
+  zoomMeetTeams,
+  archiveIcon,
+  checklistIcon,
+  flagIcon,
+  bookIcon,
+  shieldIcon,
+  videoIcon,
+} from './assets';
 
 export default function FeaturesGrid() {
   return (
-    <section className="py-12">
+    <section id="features" className="py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
           Features
