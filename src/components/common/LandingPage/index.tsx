@@ -4,6 +4,7 @@ import HeroSection from './HeroSection';
 import HowItWorks from './HowItWorks';
 import Navbar from './Navbar';
 import TemperatureControl from './TemperatureControl';
+import Testimonials from './Testimonials';
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <HowItWorks />
       <FeaturesGrid />
       <TemperatureControl />
+      <Testimonials />
     </div>
   );
 }
