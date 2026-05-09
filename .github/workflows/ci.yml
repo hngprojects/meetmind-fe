@@ -18,8 +18,9 @@ jobs:
     steps:
       # ===== BRANCH NAME VALIDATION =====
       - name: Validate branch name
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
-          BRANCH="${{ github.head_ref || github.ref_name }}"
           echo "Branch: $BRANCH"
 
           if echo "$BRANCH" | grep -Eq '^(main|master|dev(elop)?|staging|hotfix|release)$'; then
