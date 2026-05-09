@@ -28,7 +28,7 @@ jobs:
             exit 0
           fi
 
-          if echo "$BRANCH" | grep -Eq '^(feature|fix|chore|hotfix|bugfix)/([A-Za-z]+-[0-9]+(-[a-z0-9-]*)?|[a-z0-9-]+)$'; then
+          if echo "$BRANCH" | grep -Eq '^(feat|feature|fix|chore|hotfix|bugfix|docs|refactor)/([A-Za-z]+-[0-9]+(-[a-z0-9-]*)?|[a-z0-9-]+)$'; then
             echo "Valid feature branch: $BRANCH"
             exit 0
           fi

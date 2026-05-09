@@ -28,10 +28,14 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) speci
 
 ## Branch Naming Rules
 
-- Features: `feature/short-description`
-- Bug Fixes: `fix/short-description`
-- Documentation: `docs/short-description`
-- Refactoring: `refactor/short-description`
+- Features: `feat/description` or `feature/description`
+- Bug Fixes: `fix/description` or `bugfix/description`
+- Maintenance: `chore/description`
+- Documentation: `docs/description`
+- Refactoring: `refactor/description`
+- Critical Fixes: `hotfix/description`
+
+You can also include an issue ID: `feat/MM-123-description`
 
 ## Pull Requests
 
