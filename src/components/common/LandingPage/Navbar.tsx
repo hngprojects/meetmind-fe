@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from './images/meetmind-logo.svg';
 
@@ -10,6 +10,30 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      if (!target.closest('nav')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff] border-b border-gray-100">
@@ -38,21 +62,19 @@ export default function Navbar() {
 
           {/* SDK */}
           <div className="relative flex items-center">
-            <select
-              className="appearance-none bg-transparent text-[#0F172A] text-sm font-medium cursor-pointer pr-5 outline-none"
-              defaultValue=""
+            <a
+              href="#sdk"
+              className="flex items-center gap-1 text-[#0F172A] text-sm font-medium cursor-pointer"
             >
-              <option value="" hidden>
-                SDK
-              </option>
-            </select>
-            <ChevronDown className="absolute right-0 w-4 h-4 text-[#0F172A] pointer-events-none" />
+              <span>SDK</span>
+              <ChevronDown className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
         {/* Desktop CTA Button */}
         <a
-          href="#"
+          href="#request-early-access"
           className="hidden md:inline-block px-4 py-2 bg-[#02505E] text-[#FEFEFF] font-semibold rounded-lg text-sm"
         >
           Request early access
@@ -61,7 +83,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           className="md:hidden text-[#0F172A]"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,13 +104,16 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#"
+            <button
+              type="button"
               className="inline-block text-center px-4 py-2 bg-[#02505E] text-[#FEFEFF] font-semibold rounded-lg text-sm"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                // Handle early access flow
+              }}
             >
               Request early access
-            </a>
+            </button>
           </div>
         </div>
       )}

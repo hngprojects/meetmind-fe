@@ -17,12 +17,13 @@ export default function FeaturesGrid() {
           participant.
         </p>
 
-        <div className="mt-12 grid grid-cols-2 grid-rows-4 gap-6">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 md:grid-rows-4 gap-6">
           {/* Row 1–2 Col 1 (spans 2 rows) */}
           <div className="row-span-2 bg-white rounded-2xl p-6 flex flex-col">
             <img
               src={realTimeScorecard}
               className="w-full h-48 object-cover rounded-lg mb-4"
+              alt="Real-time scorecard tracking interface"
             />
             <h3 className="font-semibold text-lg">
               Real-time scorecard tracking
@@ -37,6 +38,7 @@ export default function FeaturesGrid() {
             <img
               src={preAssignedTask}
               className="w-full h-48 object-cover rounded-lg mb-4"
+              alt="Pre-assigned task queue interface"
             />
             <h3 className="font-semibold text-lg">Pre-assigned task queue</h3>
             <p className="text-sm text-[#5E6470] mt-2">
@@ -49,6 +51,7 @@ export default function FeaturesGrid() {
             <img
               src={roleBriefing}
               className="w-full h-48 object-cover rounded-lg mb-4"
+              alt="Role briefing & red flags interface"
             />
             <h3 className="font-semibold text-lg">Role briefing & red flags</h3>
             <p className="text-sm text-[#5E6470] mt-2">
@@ -61,6 +64,7 @@ export default function FeaturesGrid() {
             <img
               src={structuredSummary}
               className="w-full h-48 object-cover rounded-lg mb-4"
+              alt="Structured summary interface"
             />
             <h3 className="font-semibold text-lg">Structured summary</h3>
             <p className="text-sm text-[#5E6470] mt-2">
@@ -73,6 +77,7 @@ export default function FeaturesGrid() {
             <img
               src={timedGapAlerts}
               className="w-full h-48 object-cover rounded-lg mb-4"
+              alt="Timed gap alerts interface"
             />
             <h3 className="font-semibold text-lg">Timed gap alerts</h3>
             <p className="text-sm text-[#5E6470] mt-2">
@@ -85,6 +90,7 @@ export default function FeaturesGrid() {
             <img
               src={zoomMeetTeams}
               className="w-full h-48 object-cover rounded-lg mb-4"
+              alt="Zoom, Meet & Teams support"
             />
             <h3 className="font-semibold text-lg">
               Zoom, Meet & Teams support

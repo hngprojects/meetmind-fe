@@ -13,10 +13,10 @@ export default function HeroSection() {
             alt="Task List Star"
             className="h-auto w-10 md:w-16"
           />
-          <h2 className="font-serif text-4xl md:text-6xl text-[#0F172A] tracking-[-0.15rem] leading-[1.4] md:tracking-[-0.3rem] md:leading-none">
+          <h1 className="font-serif text-4xl md:text-6xl text-[#0F172A] tracking-[-0.15rem] leading-[1.4] md:tracking-[-0.3rem] md:leading-none">
             Interview better. <br />{' '}
             <span className="text-[#035A69]">Remember everything.</span>
-          </h2>
+          </h1>
           <img src={duo} alt="Google Meet" className="w-10 md:w-18" />
         </div>
         <p className="mt-2 text-sm max-w-xs md:mt-4 md:text-lg text-[#5E6470] md:max-w-lg mx-auto">
@@ -29,14 +29,14 @@ export default function HeroSection() {
           <img src={chat} alt="Google Chat" className="w-10 md:w-22" />
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <a
-              href="#"
+              href="#get-early-access"
               className="px-6 py-3 bg-[#02505E] text-white font-semibold rounded-lg text-base hover:bg-[#FFFFFF] hover:text-[#013A44] hover:border hover:border-[#DADADA] transition-colors"
             >
               Get early access
             </a>
 
             <a
-              href="#"
+              href="#watch-a-demo"
               className="px-8 py-3 border border-[#DADADA] text-[#02505E] font-semibold rounded-lg text-base hover:bg-[#02505E] hover:text-white transition-colors inline-flex items-center gap-2"
             >
               Watch a Demo
@@ -46,7 +46,7 @@ export default function HeroSection() {
         </div>
 
         <p className="mt-12 text-sm max-w-sm md:mt-10 md:text-md text-[#5E6470] md:max-w-lg mx-auto">
-          Trusted by <span className="text-[#0F172A]">40+ HR team</span>. Works
+          Trusted by <span className="text-[#0F172A]">40+ HR teams</span>. Works
           with Zoom, Google Meet & Teams.
         </p>
       </div>

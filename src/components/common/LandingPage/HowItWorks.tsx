@@ -106,15 +106,15 @@ export default function HowItWorks() {
               </p>
               <ul className="space-y-3 text-[0.65rem] max-w-sm md:mt-2 md:text-md text-[#5E6470]">
                 <li className="flex items-start gap-2">
-                  <img src={checkIcon} alt="check" className="w-2 h-2 mt-1" />
+                  <img src={checkIcon} alt="" className="w-2 h-2 mt-1" />
                   Arrives briefed on the candidate and role
                 </li>
                 <li className="flex items-start gap-2">
-                  <img src={checkIcon} alt="check" className="w-2 h-2 mt-1" />
+                  <img src={checkIcon} alt="" className="w-2 h-2 mt-1" />
                   Asks follow-ups when gaps are detected
                 </li>
                 <li className="flex items-start gap-2">
-                  <img src={checkIcon} alt="check" className="w-2 h-2 mt-1" />
+                  <img src={checkIcon} alt="" className="w-2 h-2 mt-1" />
                   Structured notes ready the second you hang up
                 </li>
               </ul>

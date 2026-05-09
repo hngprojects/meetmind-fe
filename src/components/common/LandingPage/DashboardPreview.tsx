@@ -16,7 +16,7 @@ export default function DashboardPreview() {
           <img
             src={dashboardImageMobile}
             alt="MeetMind dashboard preview showing interview tracking interface"
-            className="w-[20rem] h-auto rounded-lg md:hidden"
+            className="w-[20rem] h-auto rounded-lg"
           />
         </div>
       </div>
