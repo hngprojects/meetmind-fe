@@ -21,7 +21,10 @@ const Step1 = () => {
           </p>
         </div>
 
-        <Button className="bg-[#035A69]" onClick={nextStep}>
+        <Button
+          className="bg-primary text-primary-foreground"
+          onClick={nextStep}
+        >
           Get started
         </Button>
       </div>

@@ -1,18 +1,25 @@
 import type React from 'react';
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string;
   error?: string;
+  options: { value: string; label: string }[];
 };
 
-const Input = ({ label, error, className, ...props }: InputProps) => {
+const Select = ({
+  label,
+  error,
+  options,
+  className,
+  ...props
+}: SelectProps) => {
   return (
     <div className="flex flex-col gap-1 w-full">
       {label && (
         <label className="text-sm font-medium text-gray-700">{label}</label>
       )}
 
-      <input
+      <select
         className={`
           w-full rounded-md border border-gray-200 bg-white
           px-3 py-2 text-sm outline-none transition
@@ -21,11 +28,17 @@ const Input = ({ label, error, className, ...props }: InputProps) => {
           ${className ?? ''}
         `}
         {...props}
-      />
+      >
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
 
       {error && <span className="text-xs text-red-500">{error}</span>}
     </div>
   );
 };
 
-export default Input;
+export default Select;

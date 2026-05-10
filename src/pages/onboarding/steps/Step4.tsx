@@ -1,10 +1,18 @@
 import MeetmindLogo from '@/assets/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
-import { ChevronLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
+import { IntegrationCard } from '../components/IntegrationCard';
+import GoogleLogo from '@/assets/Google.svg';
+import ZoomLogo from '@/assets/Google.svg';
 
 const Step4 = () => {
   const { nextStep, prevStep } = onboardingStore();
+  const [connections, setConnections] = useState({
+    google: false,
+    zoom: true,
+  });
   return (
     <div className="flex flex-col justify-center gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -19,14 +27,37 @@ const Step4 = () => {
           <p className="font-medium text-center max-w-sm">
             MeetMind AI needs to join your calls. Connect at least one platform
           </p>
+
+          <div className="w-full space-y-3 mb-8">
+            <IntegrationCard
+              name="Google Meet"
+              logo={<img src={GoogleLogo} alt="Google" />}
+              isConnected={connections.google}
+              onConnect={() =>
+                setConnections((prev) => ({ ...prev, google: true }))
+              }
+            />
+            <IntegrationCard
+              name="Zoom"
+              logo={<img src={ZoomLogo} alt="Zoom" />}
+              isConnected={connections.zoom}
+              onConnect={() =>
+                setConnections((prev) => ({ ...prev, zoom: true }))
+              }
+            />
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-2 items-center">
-        <Button onClick={nextStep} size="lg" className="w-full">
+        <Button
+          onClick={nextStep}
+          size="lg"
+          className="w-full bg-primary text-primary-foreground"
+        >
           Continue
         </Button>
         <Button onClick={prevStep} variant="ghost" className="w-fit">
-          <ChevronLeft></ChevronLeft>
+          <ArrowLeft></ArrowLeft>
           Back
         </Button>
       </div>

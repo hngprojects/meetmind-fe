@@ -1,10 +1,24 @@
 import MeetmindLogo from '@/assets/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
-import { ChevronLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import TonePicker from '../components/TonePicker';
+import { ToggleCard } from '../components/ToggleCard';
+import { useState } from 'react';
+
+interface Preferences {
+  dynamic: boolean;
+  autoRecord: boolean;
+  announce: boolean;
+}
 
 const Step3 = () => {
   const { nextStep, prevStep } = onboardingStore();
+  const [preferences, setPreferences] = useState<Preferences>({
+    dynamic: true,
+    autoRecord: true,
+    announce: false,
+  });
   return (
     <div className="flex flex-col justify-center gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -24,21 +38,52 @@ const Step3 = () => {
       </div>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="no-of-hires">Default interview tone</label>
+          <TonePicker />
 
-            <div className="">First</div>
-            <div className="">Second</div>
-            <div className="">Third</div>
+          <div className="flex flex-col gap-3">
+            <ToggleCard
+              title="Dynamic follow-ups"
+              description="AI adapts questions based on interviews"
+              enabled={preferences.dynamic}
+              onToggle={() =>
+                setPreferences((prev) => ({ ...prev, dynamic: !prev.dynamic }))
+              }
+            />
+            <ToggleCard
+              title="Auto record all interviews"
+              description="Every session recorded by default"
+              enabled={preferences.autoRecord}
+              onToggle={() =>
+                setPreferences((prev) => ({
+                  ...prev,
+                  autoRecord: !prev.autoRecord,
+                }))
+              }
+            />
+            <ToggleCard
+              title="Announce recording to client"
+              description="AI notifies candidate at the start"
+              enabled={preferences.announce}
+              onToggle={() =>
+                setPreferences((prev) => ({
+                  ...prev,
+                  announce: !prev.announce,
+                }))
+              }
+            />
           </div>
         </div>
 
         <div className="flex flex-col gap-2 items-center">
-          <Button onClick={nextStep} size="lg" className="w-full">
+          <Button
+            onClick={nextStep}
+            size="lg"
+            className="w-full bg-primary text-primary-foreground"
+          >
             Continue
           </Button>
           <Button onClick={prevStep} variant="ghost" className="w-fit">
-            <ChevronLeft></ChevronLeft>
+            <ArrowLeft></ArrowLeft>
             Back
           </Button>
         </div>

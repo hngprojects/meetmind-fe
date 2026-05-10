@@ -1,8 +1,10 @@
 import MeetmindLogo from '@/assets/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
-import { ChevronLeft } from 'lucide-react';
-import { HireRadioGroup, type HireOption } from '@/components/ui/radio-group';
+import { ArrowLeft } from 'lucide-react';
+import { HireRadioGroup, type HireOption } from '../components/RadioCard';
+import Input from '../components/Input';
+import Select from '../components/Select';
 
 const hireOptions: HireOption[] = [
   {
@@ -44,21 +46,14 @@ const Step2 = () => {
 
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="company-name">Company name</label>
-            <input
-              type="text"
-              placeholder="e.g Emerj LLC"
-              className="shadow-[0 1 2 0 #1A1A1A0D]"
-            />
-          </div>
-          <select name="role" id="role">
-            <option value="ceo">CEO</option>
-            <option value="founder">Founder</option>
-            <option value="leader">Leader</option>
-            <option value="worker">Worker</option>
-            <option value="engineer">Engineer</option>
-          </select>
+          <Input label="Company name" placeholder="e.g Emerj LLC" />
+          <Select
+            options={[
+              { value: 'ceo', label: 'CEO' },
+              { value: 'founder', label: 'Founder' },
+              { value: 'engineer', label: 'Engineer' },
+            ]}
+          />
 
           <div className="flex flex-col gap-2">
             <label htmlFor="no-of-hires">How many hires are you planning</label>
@@ -72,11 +67,15 @@ const Step2 = () => {
         </div>
 
         <div className="flex flex-col gap-2 items-center">
-          <Button onClick={nextStep} size="lg" className="w-full">
+          <Button
+            onClick={nextStep}
+            size="lg"
+            className="w-full bg-primary text-primary-foreground"
+          >
             Continue
           </Button>
           <Button onClick={prevStep} variant="ghost" className="w-fit">
-            <ChevronLeft></ChevronLeft>
+            <ArrowLeft></ArrowLeft>
             Back
           </Button>
         </div>
