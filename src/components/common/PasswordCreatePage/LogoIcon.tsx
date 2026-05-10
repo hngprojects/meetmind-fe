@@ -9,28 +9,31 @@ export default function LogoIcon({ className = '' }: LogoIconProps) {
 
   return (
     <svg
-      viewBox="0 0 64 64"
+      width="60"
+      height="60"
+      viewBox="0 0 60 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id={gradientId} x1="0" y1="0" x2="64" y2="64">
-          <stop offset="0%" stopColor="#4f46e5" />
-          <stop offset="50%" stopColor="#2563eb" />
-          <stop offset="100%" stopColor="#0891b2" />
+        <linearGradient
+          id={gradientId}
+          x1="30"
+          y1="0"
+          x2="30"
+          y2="60"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#4F46E5" />
+          <stop offset="1" stopColor="#035A69" />
         </linearGradient>
       </defs>
-      <circle cx="32" cy="32" r="32" fill={`url(#${gradientId})`} />
       <path
-        d="M32 10C20 10 12 20 12 32s8 22 20 22 20-10 20-22"
-        stroke="white"
-        strokeWidth="6"
-        strokeLinecap="round"
-        fill="none"
+        d="M14.975 4.05C12.7226 6.25153 10.9852 8.92414 9.88738 11.8762C8.78953 14.8283 8.35844 17.9867 8.625 21.125C9.5 32.125 19.9 41.1 29.325 41.1C38.075 41.1 41.525 33.45 40.675 28.25C40.3629 26.3429 39.5424 24.5552 38.3 23.075C39.875 23.925 41.4 25 42.825 26.325C46.625 29.85 48.925 34.4 49.275 39.075C50.1 49.4 42.45 60 29.65 60C25.425 60 20.95 58.925 17.2 57.15C7.05 52.35 0 42 0 30C0 18.925 6.025 9.25 14.975 4.05ZM30.35 0C34.575 0 39.05 1.075 42.8 2.85C47.9469 5.2781 52.2969 9.12004 55.3425 13.9274C58.388 18.7347 60.0034 24.3091 60 30C60 41.075 53.975 50.75 45.025 55.95C47.2774 53.7485 49.0148 51.0759 50.1126 48.1238C51.2105 45.1717 51.6416 42.0133 51.375 38.875C50.5 27.875 40.1 18.9 30.675 18.9C21.925 18.9 18.475 26.55 19.325 31.75C19.6444 33.6597 20.4736 35.4476 21.725 36.925C20.0836 36.0401 18.5628 34.9478 17.2 33.675C13.4 30.15 11.1 25.6 10.725 20.925C9.9 10.6 17.55 0 30.35 0Z"
+        fill={`url(#${gradientId})`}
       />
-      <circle cx="32" cy="32" r="7" fill="white" />
     </svg>
   );
 }
