@@ -1,9 +1,72 @@
 import { type FormEvent, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
 import api from '@/lib/api';
 import LogoIcon from './LogoIcon';
 import PasswordField from './PasswordField';
+
+const PASSWORD_RULES = [
+  {
+    id: 'length',
+    label: 'At least 8 characters',
+    test: (pw: string) => pw.length >= 8,
+  },
+  {
+    id: 'uppercase',
+    label: 'Upper case letter (A-Z)',
+    test: (pw: string) => /[A-Z]/.test(pw),
+  },
+  {
+    id: 'lowercase',
+    label: 'Lower case letter (a-z)',
+    test: (pw: string) => /[a-z]/.test(pw),
+  },
+  {
+    id: 'symbol',
+    label: 'One symbol (@,#,$,%)',
+    test: (pw: string) => /[@#$%]/.test(pw),
+  },
+];
+
+function PasswordChecklist({
+  password,
+  showErrors = false,
+}: {
+  password: string;
+  showErrors?: boolean;
+}) {
+  if (password.length === 0) return null;
+
+  return (
+    <ul className="mt-3 space-y-1.5">
+      {PASSWORD_RULES.map((rule) => {
+        const passed = rule.test(password);
+        const failed = !passed && showErrors;
+
+        return (
+          <li
+            key={rule.id}
+            className={`flex items-center gap-2 text-sm transition-colors duration-200 ${
+              passed
+                ? 'text-emerald-500'
+                : failed
+                  ? 'text-rose-500'
+                  : 'text-gray-400'
+            }`}
+          >
+            <Check
+              className={`h-3.5 w-3.5 flex-shrink-0 transition-opacity duration-200 ${
+                passed ? 'opacity-100' : 'opacity-30'
+              }`}
+              strokeWidth={3}
+            />
+            <span>{rule.label}</span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
 
 export default function PasswordForm() {
   const navigate = useNavigate();
@@ -72,8 +135,8 @@ export default function PasswordForm() {
     confirmPassword.length === 0 || newPassword === confirmPassword;
 
   return (
-    <section className="flex flex-1 items-start justify-center px-4 py-10 md:items-center md:px-10 md:py-10">
-      <div className="w-full max-w-[500px] rounded-2xl bg-white px-4 py-8 shadow-sm sm:px-6 md:px-10 md:py-12">
+    <section className="flex flex-1 flex-col items-center justify-center overflow-y-auto px-4 py-8">
+      <div className="w-full max-w-md rounded-2xl bg-white px-4 pb-8 pt-10 shadow-sm sm:px-6 md:px-8 md:py-10">
         <div className="mx-auto mb-8 hidden h-16 w-16 md:block">
           <LogoIcon className="h-full w-full" />
         </div>
@@ -106,14 +169,20 @@ export default function PasswordForm() {
             </div>
           ) : null}
 
-          <PasswordField
-            label="New password"
-            placeholder="Enter new password"
-            value={newPassword}
-            onChange={setNewPassword}
-            visible={showNewPassword}
-            onToggleVisibility={() => setShowNewPassword((prev) => !prev)}
-          />
+          <div>
+            <PasswordField
+              label="New password"
+              placeholder="Enter new password"
+              value={newPassword}
+              onChange={setNewPassword}
+              visible={showNewPassword}
+              onToggleVisibility={() => setShowNewPassword((prev) => !prev)}
+            />
+            <PasswordChecklist
+              password={newPassword}
+              showErrors={confirmPassword.length > 0}
+            />
+          </div>
 
           <PasswordField
             label="Confirm password"
