@@ -115,7 +115,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="mt-8 text-center text-[#64748B] text-xs">
-          ©2026 MeetMind LTD. All right reserved.
+          ©2026 MeetMind LTD. All rights reserved.
         </p>
       </div>
     </footer>

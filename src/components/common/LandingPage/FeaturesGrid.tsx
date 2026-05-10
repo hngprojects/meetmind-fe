@@ -105,7 +105,7 @@ export default function FeaturesGrid() {
               <img
                 src={bookIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Boook Icon"
+                alt="Book Icon"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Structured summary
