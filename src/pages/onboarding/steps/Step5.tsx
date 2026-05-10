@@ -1,4 +1,4 @@
-import MeetmindLogo from '@/assets/MeetmindLogo.svg';
+import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft, LayoutGrid, Bot, Contact, Zap } from 'lucide-react';
@@ -7,13 +7,13 @@ import Card from '../components/Card';
 const Step5 = () => {
   const { nextStep, prevStep } = onboardingStore();
   return (
-    <div className="flex flex-col justify-center gap-6">
+    <div className="flex flex-col justify-center gap-6 max-w-md">
       <div className="flex flex-col items-center justify-center">
         <div className="">
           <img src={MeetmindLogo} alt="Meetmind Logo" />
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center">
           <h3 className="font-bold text-[40px] leading-12 text-center">
             Welcome To MeetMind
           </h3>
@@ -50,7 +50,7 @@ const Step5 = () => {
         <Button
           onClick={nextStep}
           size="lg"
-          className="w-full bg-primary text-primary-foreground"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
         >
           Take the tour
         </Button>

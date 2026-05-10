@@ -38,8 +38,8 @@ export function HireRadioGroup({
             className={cn(
               'flex items-center gap-4 cursor-pointer rounded-xl border p-4 transition-all relative',
               active
-                ? 'border-teal-600 bg-white ring-1 ring-teal-600'
-                : 'border-slate-200 hover:border-slate-300 bg-white'
+                ? 'border-primary bg-card ring-1 ring-ring'
+                : 'border-border hover:border-slate-300 bg-white'
             )}
           >
             <div className="shrink-0 text-slate-400">
@@ -50,7 +50,7 @@ export function HireRadioGroup({
               <p
                 className={cn(
                   'font-semibold text-[15px]',
-                  active ? 'text-slate-900' : 'text-slate-600'
+                  active ? 'text-foreground' : 'text-muted-foreground'
                 )}
               >
                 {opt.title}
@@ -58,9 +58,7 @@ export function HireRadioGroup({
               <p className="text-sm text-slate-400">{opt.description}</p>
             </div>
             <div className="shrink-0 ml-2 w-5 h-5 flex items-center justify-center">
-              {active && (
-                <div className="w-3 h-3 rounded-full bg-primary text-primary-foreground" />
-              )}
+              {active && <div className="w-3 h-3 rounded-full bg-primary" />}
             </div>
           </div>
         );

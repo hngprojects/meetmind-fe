@@ -1,4 +1,4 @@
-import MeetmindLogo from '@/assets/MeetmindLogo.svg';
+import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 const Step1 = () => {
@@ -22,8 +22,9 @@ const Step1 = () => {
         </div>
 
         <Button
-          className="bg-primary text-primary-foreground"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground"
           onClick={nextStep}
+          size="lg"
         >
           Get started
         </Button>

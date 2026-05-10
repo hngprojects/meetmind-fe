@@ -9,8 +9,8 @@ const Card = ({ title, description, icon }: CardProps) => (
     <div className="text-muted-foreground w-6 h-6">{icon}</div>
 
     <div className="space-y-1">
-      <h4 className="font-bold text-slate-900 text-[16px]">{title}</h4>
-      <p className="text-sm text-slate-400 leading-snug font-medium">
+      <h4 className="font-bold text-foreground text-base">{title}</h4>
+      <p className="text-sm text-muted-foreground leading-snug font-medium">
         {description}
       </p>
     </div>

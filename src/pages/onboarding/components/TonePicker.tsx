@@ -18,8 +18,8 @@ const TonePicker = () => {
             className={cn(
               'flex-1 py-2 h-13 text-sm font-medium rounded-lg border transition-all',
               selectedTone === tone
-                ? 'border-teal-700 text-teal-700 bg-white shadow-sm'
-                : 'border-slate-200 text-slate-500 bg-white hover:border-slate-300 hover:text-slate-700'
+                ? 'border-primary text-primary bg-white shadow-sm'
+                : 'border-border text-muted-foreground bg-white hover:border-slate-300 hover:text-slate-700'
             )}
           >
             {tone}

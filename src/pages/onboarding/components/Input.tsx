@@ -9,14 +9,14 @@ const Input = ({ label, error, className, ...props }: InputProps) => {
   return (
     <div className="flex flex-col gap-1 w-full">
       {label && (
-        <label className="text-sm font-medium text-gray-700">{label}</label>
+        <label className="text-sm font-medium text-foreground">{label}</label>
       )}
 
       <input
         className={`
-          w-full rounded-md border border-gray-200 bg-white
+          w-full rounded-md border border-border bg-background
           px-3 py-2 text-sm outline-none transition
-          focus:border-[#005566] focus:ring-1 focus:ring-[#005566]/20
+          focus:border-primary focus:ring-1 focus:ring-ring/30
           ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : ''}
           ${className ?? ''}
         `}

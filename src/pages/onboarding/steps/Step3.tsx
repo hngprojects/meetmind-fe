@@ -1,4 +1,4 @@
-import MeetmindLogo from '@/assets/MeetmindLogo.svg';
+import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft } from 'lucide-react';
@@ -78,7 +78,7 @@ const Step3 = () => {
           <Button
             onClick={nextStep}
             size="lg"
-            className="w-full bg-primary text-primary-foreground"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             Continue
           </Button>
