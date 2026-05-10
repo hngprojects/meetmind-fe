@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'create-password',
+        path: 'reset-password',
         element: <PasswordCreatePage />,
       },
       { path: 'signup', element: <SignupPage /> },

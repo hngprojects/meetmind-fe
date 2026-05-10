@@ -1,11 +1,12 @@
+import { useState } from 'react';
 import HeroSection from './HeroSection';
 import PasswordForm from './PasswordForm';
 import LogoIcon from './LogoIcon';
-
-const backgroundImageUrl =
-  'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=80';
+import signupBg from '@/assets/images/signupBg.png';
 
 export default function PasswordCreatePage() {
+  const [isSuccess, setIsSuccess] = useState(false);
+
   return (
     <>
       {/* ── Mobile layout ── */}
@@ -13,13 +14,15 @@ export default function PasswordCreatePage() {
         {/* Background */}
         <div className="absolute inset-0">
           <img
-            src={backgroundImageUrl}
+            src={signupBg}
             alt=""
             aria-hidden="true"
-            className="h-[70%] w-full object-cover object-top"
+            className={`${isSuccess ? 'h-full' : 'h-[70%]'} w-full object-cover object-[5%_center]`}
           />
           <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute bottom-0 h-[30%] w-full bg-[#f7f9fb]" />
+          {!isSuccess && (
+            <div className="absolute bottom-0 h-[30%] w-full bg-[#f7f9fb]" />
+          )}
         </div>
 
         {/* Content */}
@@ -44,7 +47,7 @@ export default function PasswordCreatePage() {
                 <LogoIcon className="h-full w-full" />
               </div>
               <div className="w-full">
-                <PasswordForm />
+                <PasswordForm onSuccess={() => setIsSuccess(true)} />
               </div>
             </div>
           </div>

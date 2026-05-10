@@ -1,16 +1,14 @@
 import LogoIcon from './LogoIcon';
-
-const backgroundImageUrl =
-  'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=80';
+import signupBg from '@/assets/images/signupBg.png';
 
 export default function HeroSection() {
   return (
     <section className="relative hidden w-1/2 flex-shrink-0 flex-col items-start justify-center bg-slate-900 px-14 py-10 md:flex">
       <img
-        src={backgroundImageUrl}
+        src={signupBg}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-top"
+        className="absolute inset-0 h-full w-full object-cover object-[2%_center]"
       />
       <div className="absolute inset-0 bg-black/30" />
 

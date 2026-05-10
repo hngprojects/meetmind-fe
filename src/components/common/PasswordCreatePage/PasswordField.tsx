@@ -9,6 +9,7 @@ interface PasswordFieldProps {
   visible: boolean;
   onToggleVisibility: () => void;
   helperText?: string;
+  error?: boolean;
 }
 
 export default function PasswordField({
@@ -19,6 +20,7 @@ export default function PasswordField({
   visible,
   onToggleVisibility,
   helperText,
+  error,
 }: PasswordFieldProps) {
   const inputId = useId();
 
@@ -43,7 +45,11 @@ export default function PasswordField({
           onChange={(event) => onChange(event.target.value)}
           placeholder={placeholder}
           required
-          className="w-full rounded-lg border border-gray-200 bg-[#fafafa] py-3 pl-11 pr-11 text-[15px] text-slate-900 placeholder:text-gray-400 transition focus:border-blue-500 focus:bg-white focus:outline-none"
+          className={`w-full rounded-lg border bg-[#fafafa] py-3 pl-11 pr-11 text-[15px] text-slate-900 placeholder:text-gray-400 transition focus:bg-white focus:outline-none ${
+            error
+              ? 'border-rose-500 focus:border-rose-500'
+              : 'border-gray-200 focus:border-blue-500'
+          }`}
         />
 
         <button
@@ -65,7 +71,9 @@ export default function PasswordField({
       </div>
 
       {helperText ? (
-        <p className="text-sm text-gray-500">{helperText}</p>
+        <p className={`text-sm ${error ? 'text-rose-500' : 'text-gray-500'}`}>
+          {helperText}
+        </p>
       ) : null}
     </div>
   );
