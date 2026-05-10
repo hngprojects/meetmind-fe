@@ -37,7 +37,8 @@ export default function FeaturesGrid() {
               <img
                 src={archiveIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Archive Icon"
+                alt=""
+                aria-hidden="true"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Real-time scorecard tracking
@@ -56,7 +57,8 @@ export default function FeaturesGrid() {
               <img
                 src={checklistIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Checklist Icon"
+                alt=""
+                aria-hidden="true"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Pre-assigned task queue
@@ -78,13 +80,14 @@ export default function FeaturesGrid() {
               <img
                 src={flagIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Flag Icon"
+                alt=""
+                aria-hidden="true"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Role briefing & red flags
               </h3>
               <p className="text-sm md:text-lg text-[#3F4555] mt-2">
-                Meet Mind internalizes warning signs to watch for.
+                MeetMind internalizes warning signs to watch for.
               </p>
             </div>
             <img
@@ -105,7 +108,8 @@ export default function FeaturesGrid() {
               <img
                 src={bookIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Book Icon"
+                alt=""
+                aria-hidden="true"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Structured summary
@@ -127,7 +131,8 @@ export default function FeaturesGrid() {
               <img
                 src={shieldIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Shield Alert Icon"
+                alt=""
+                aria-hidden="true"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Timed gap alerts
@@ -149,13 +154,14 @@ export default function FeaturesGrid() {
               <img
                 src={videoIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt="Video Icon"
+                alt=""
+                aria-hidden="true"
               />
               <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
                 Zoom, Meet & Teams support
               </h3>
               <p className="text-sm md:text-lg text-[#3F4555] mt-2">
-                Works wherever you already run interviews. Meet Mind joins as a
+                Works wherever you already run interviews. MeetMind joins as a
                 named participant - no recordings required, no integration to
                 install.
               </p>

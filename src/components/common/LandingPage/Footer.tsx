@@ -54,8 +54,8 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FFFFFF] pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-24 py-12 border-t border-[#E1E3E4]">
+    <footer className="bg-white pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-12 border-t border-[`#E1E3E4`]">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="max-w-xs">
             <div className="flex gap-6">
@@ -77,7 +77,7 @@ export default function Footer() {
                   key={social.name}
                   href={social.href}
                   aria-label={social.name}
-                  className="text-[#94A3B8] hover:text-white transition-colors"
+                  className="opacity-60 hover:opacity-100 transition-opacity"
                 >
                   <img src={social.icon} alt="" className="w-5 h-5" />
                 </a>
