@@ -7,10 +7,14 @@ import Buttons from '@/components/props/buttons';
 import axios from 'axios';
 import api from '@/lib/api';
 import { useSignupStore } from '@/store/signupStore';
+import { useNavigate } from 'react-router-dom';
 
 const Signform = () => {
+  const navigate = useNavigate();
+  // show password
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
+  // import zustand store
   const {
     isLoading,
     serverError,
@@ -22,6 +26,7 @@ const Signform = () => {
     setIsSuccess,
   } = useSignupStore();
 
+  // import zustand store
   const {
     register,
     handleSubmit,
@@ -57,13 +62,17 @@ const Signform = () => {
       );
       console.log('Success:', response.data);
       setIsSuccess(true);
+      navigate('/signup');
 
       // handle success — e.g. save token, redirect
       // localStorage.setItem('token', response.data.token);
     } catch (error) {
       if (axios.isAxiosError(error)) {
+        const responseData = error.response?.data;
         const message =
-          error.response?.data?.message ?? 'Something went wrong. Try again.';
+          responseData?.error?.details?.[0]?.msg ||
+          responseData?.message ||
+          'Something went wrong. Try again.';
         setServerError(message);
       } else {
         setServerError('Unexpected error. Please try again.');
