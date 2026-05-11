@@ -25,7 +25,7 @@ export default function FeaturesGrid() {
           participant.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-4 gap-6">
+        <div className="mt-12 grid grid-cols-1 grid-rows-6 lg:grid-cols-2 lg:grid-rows-4 gap-6">
           {/* Real Time Score Card */}
           <div className="lg:row-span-2 bg-white rounded-2xl p-6 flex flex-col justify-between items-center gap-6 lg:gap-4">
             <img
