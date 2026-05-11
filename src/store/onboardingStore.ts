@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 interface OnboardingData {
   companyName: string;
@@ -19,10 +20,13 @@ interface OnboardingData {
 interface OnboardingState {
   step: StepNumber;
   data: OnboardingData;
+  isSubmitting: boolean;
   setStep: (step: StepNumber) => void;
   nextStep: () => void;
   prevStep: () => void;
   updateData: (partial: Partial<OnboardingData>) => void;
+  validateStep: () => boolean;
+  submitOnboarding: () => Promise<void>;
   reset: () => void;
 }
 
@@ -44,36 +48,88 @@ const initialData: OnboardingData = {
   },
 };
 
-export const onboardingStore = create<OnboardingState>((set) => ({
-  step: 1,
-  data: initialData,
-  setStep: (step) => set({ step }),
-  nextStep: () => {
-    set((state) => ({ step: Math.min(state.step + 1, 5) as StepNumber }));
-  },
-  prevStep: () => {
-    set((state) => ({
-      step: Math.max(1, state.step - 1) as StepNumber,
-    }));
-  },
-  updateData: (partial) =>
-    set((state) => ({
-      data: {
-        ...state.data,
-        ...partial,
-        preferences: {
-          ...state.data.preferences,
-          ...partial.preferences,
-        },
-        integrations: {
-          ...state.data.integrations,
-          ...partial.integrations,
-        },
-      },
-    })),
-  reset: () =>
-    set({
+export const onboardingStore = create<OnboardingState>()(
+  persist(
+    (set, get) => ({
       step: 1,
       data: initialData,
+      isSubmitting: false,
+      setStep: (step) => set({ step }),
+      nextStep: () => {
+        const { step, validateStep } = get();
+        if (!validateStep()) return;
+        set({
+          step: Math.min(step + 1, 5) as StepNumber,
+        });
+      },
+      prevStep: () => {
+        set((state) => ({
+          step: Math.max(1, state.step - 1) as StepNumber,
+        }));
+      },
+      updateData: (partial) =>
+        set((state) => ({
+          data: {
+            ...state.data,
+            ...partial,
+            preferences: {
+              ...state.data.preferences,
+              ...partial.preferences,
+            },
+            integrations: {
+              ...state.data.integrations,
+              ...partial.integrations,
+            },
+          },
+        })),
+      validateStep: () => {
+        const { step, data } = get();
+
+        const validators: Record<StepNumber, () => boolean> = {
+          1: () => true,
+          2: () =>
+            data.companyName.trim() !== '' &&
+            data.role.trim() !== '' &&
+            data.hires.trim() !== '',
+          3: () => true,
+          4: () => data.integrations.google || data.integrations.zoom,
+          5: () => true,
+        };
+
+        return validators[step]();
+      },
+      submitOnboarding: async () => {
+        const { data } = get();
+
+        set({ isSubmitting: true });
+
+        try {
+          await fetch(
+            'the actual api route. For when you talk to the backend',
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data),
+            }
+          );
+        } catch (error) {
+          console.error('Onboarding failed:', error);
+        } finally {
+          set({ isSubmitting: false });
+        }
+      },
+      reset: () =>
+        set({
+          step: 1,
+          data: initialData,
+        }),
     }),
-}));
+    {
+      name: 'onboarding-storage',
+      partialize: (state) => ({
+        step: state.step,
+        data: state.data,
+      }),
+    }
+  )
+);
