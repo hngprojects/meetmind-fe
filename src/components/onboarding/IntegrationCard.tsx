@@ -2,7 +2,7 @@ import { Check } from 'lucide-react';
 
 interface IntegrationCardProps {
   name: string;
-  logo: React.ReactNode; // You can pass an <img> or SVG here
+  logo: React.ReactNode;
   isConnected: boolean;
   onConnect: () => void;
 }

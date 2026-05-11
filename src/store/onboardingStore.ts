@@ -99,12 +99,13 @@ export const onboardingStore = create<OnboardingState>()(
         return validators[step]();
       },
       submitOnboarding: async () => {
-        const { data } = get();
+        const { data, isSubmitting } = get();
+        if (isSubmitting) return;
 
         set({ isSubmitting: true });
 
         try {
-          await fetch(
+          const response = await fetch(
             'the actual api route. For when you talk to the backend',
             {
               method: 'POST',
@@ -112,6 +113,10 @@ export const onboardingStore = create<OnboardingState>()(
               body: JSON.stringify(data),
             }
           );
+          if (!response.ok) throw new Error('Failed to submit onboarding');
+          const result = await response.json();
+          return result;
+          // NOTE TO ANYONE REVIEWING THIS PART: The api call is not complete. I just wanted to put it in place so that I wont forget.
         } catch (error) {
           console.error('Onboarding failed:', error);
         } finally {

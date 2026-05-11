@@ -29,6 +29,10 @@ const hireOptions: HireOption[] = [
 
 const Step2 = () => {
   const { data, updateData, nextStep, prevStep } = onboardingStore();
+  const isValid =
+    data.companyName.trim() !== '' &&
+    data.role.trim() !== '' &&
+    data.hires.trim() !== '';
   return (
     <div className="flex flex-col justify-center gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -76,9 +80,16 @@ const Step2 = () => {
           </div>
         </div>
 
+        {!isValid && (
+          <p className="text-xs text-red-500">
+            Please fill all required fields before continuing
+          </p>
+        )}
+
         <div className="flex flex-col gap-2 items-center">
           <Button
             onClick={nextStep}
+            disabled={!isValid}
             size="lg"
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
           >

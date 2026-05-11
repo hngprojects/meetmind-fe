@@ -4,21 +4,9 @@ import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft } from 'lucide-react';
 import TonePicker from '../../../components/onboarding/TonePicker';
 import { ToggleCard } from '../../../components/onboarding/ToggleCard';
-import { useState } from 'react';
-
-interface Preferences {
-  dynamic: boolean;
-  autoRecord: boolean;
-  announce: boolean;
-}
 
 const Step3 = () => {
-  const { nextStep, prevStep } = onboardingStore();
-  const [preferences, setPreferences] = useState<Preferences>({
-    dynamic: true,
-    autoRecord: true,
-    announce: false,
-  });
+  const { data, updateData, nextStep, prevStep } = onboardingStore();
   return (
     <div className="flex flex-col justify-center gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -44,31 +32,40 @@ const Step3 = () => {
             <ToggleCard
               title="Dynamic follow-ups"
               description="AI adapts questions based on interviews"
-              enabled={preferences.dynamic}
+              enabled={data.preferences.dynamic}
               onToggle={() =>
-                setPreferences((prev) => ({ ...prev, dynamic: !prev.dynamic }))
+                updateData({
+                  preferences: {
+                    ...data.preferences,
+                    dynamic: !data.preferences.dynamic,
+                  },
+                })
               }
             />
             <ToggleCard
               title="Auto record all interviews"
               description="Every session recorded by default"
-              enabled={preferences.autoRecord}
+              enabled={data.preferences.autoRecord}
               onToggle={() =>
-                setPreferences((prev) => ({
-                  ...prev,
-                  autoRecord: !prev.autoRecord,
-                }))
+                updateData({
+                  preferences: {
+                    ...data.preferences,
+                    autoRecord: !data.preferences.autoRecord,
+                  },
+                })
               }
             />
             <ToggleCard
               title="Announce recording to client"
               description="AI notifies candidate at the start"
-              enabled={preferences.announce}
+              enabled={data.preferences.announce}
               onToggle={() =>
-                setPreferences((prev) => ({
-                  ...prev,
-                  announce: !prev.announce,
-                }))
+                updateData({
+                  preferences: {
+                    ...data.preferences,
+                    announce: !data.preferences.announce,
+                  },
+                })
               }
             />
           </div>

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { onboardingStore } from '@/store/onboardingStore';
 import { cn } from '@/lib/utils';
 
+const tones = ['Friendly', 'Casual', 'Professional'];
+
 const TonePicker = () => {
-  const tones = ['Friendly', 'Casual', 'Professional'];
-  const [selectedTone, setSelectedTone] = useState('Friendly');
+  const { data, updateData } = onboardingStore();
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium text-slate-900">
@@ -11,20 +12,23 @@ const TonePicker = () => {
       </label>
 
       <div className="flex gap-2">
-        {tones.map((tone) => (
-          <button
-            key={tone}
-            onClick={() => setSelectedTone(tone)}
-            className={cn(
-              'flex-1 py-2 h-13 text-sm font-medium rounded-lg border transition-all',
-              selectedTone === tone
-                ? 'border-primary text-primary bg-white shadow-sm'
-                : 'border-border text-muted-foreground bg-white hover:border-slate-300 hover:text-slate-700'
-            )}
-          >
-            {tone}
-          </button>
-        ))}
+        {tones.map((tone) => {
+          const isSelected = data.tone === tone;
+          return (
+            <button
+              key={tone}
+              onClick={() => updateData({ tone })}
+              className={cn(
+                'flex-1 py-2 h-13 text-sm font-medium rounded-lg border transition-all',
+                isSelected
+                  ? 'border-primary text-primary bg-white shadow-sm'
+                  : 'border-border text-muted-foreground bg-white hover:border-slate-300 hover:text-slate-700'
+              )}
+            >
+              {tone}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

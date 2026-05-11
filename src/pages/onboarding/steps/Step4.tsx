@@ -2,17 +2,13 @@ import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft } from 'lucide-react';
-import { useState } from 'react';
 import { IntegrationCard } from '../../../components/onboarding/IntegrationCard';
 import GoogleLogo from '@/assets/onboarding/Google.svg';
 import ZoomLogo from '@/assets/onboarding/Google.svg';
 
 const Step4 = () => {
-  const { nextStep, prevStep } = onboardingStore();
-  const [connections, setConnections] = useState({
-    google: false,
-    zoom: true,
-  });
+  const { data, updateData, nextStep, prevStep } = onboardingStore();
+  const isValid = data.integrations.google || data.integrations.zoom;
   return (
     <div className="flex flex-col justify-center gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -34,23 +30,34 @@ const Step4 = () => {
           <IntegrationCard
             name="Google Meet"
             logo={<img src={GoogleLogo} alt="Google" />}
-            isConnected={connections.google}
+            isConnected={data.integrations.google}
             onConnect={() =>
-              setConnections((prev) => ({ ...prev, google: true }))
+              updateData({
+                integrations: {
+                  ...data.integrations,
+                  google: true,
+                },
+              })
             }
           />
           <IntegrationCard
             name="Zoom"
             logo={<img src={ZoomLogo} alt="Zoom" />}
-            isConnected={connections.zoom}
+            isConnected={data.integrations.zoom}
             onConnect={() =>
-              setConnections((prev) => ({ ...prev, zoom: true }))
+              updateData({
+                integrations: {
+                  ...data.integrations,
+                  zoom: true,
+                },
+              })
             }
           />
         </div>
         <div className="flex flex-col gap-2 items-center">
           <Button
             onClick={nextStep}
+            disabled={!isValid}
             size="lg"
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
           >

@@ -5,7 +5,7 @@ import { ArrowLeft, LayoutGrid, Bot, Contact, Zap } from 'lucide-react';
 import Card from '../../../components/onboarding/Card';
 
 const Step5 = () => {
-  const { nextStep, prevStep } = onboardingStore();
+  const { submitOnboarding, isSubmitting, prevStep } = onboardingStore();
   return (
     <div className="flex flex-col justify-center gap-6 max-w-md">
       <div className="flex flex-col items-center justify-center">
@@ -48,11 +48,12 @@ const Step5 = () => {
       </div>
       <div className="flex flex-col gap-2 items-center">
         <Button
-          onClick={nextStep}
+          onClick={submitOnboarding}
+          disabled={isSubmitting}
           size="lg"
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
         >
-          Take the tour
+          {isSubmitting ? 'Setting things up...' : 'Take the tour'}
         </Button>
         <Button onClick={prevStep} variant="ghost" className="w-fit">
           <ArrowLeft></ArrowLeft>
