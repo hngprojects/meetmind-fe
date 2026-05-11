@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { HomePage } from '../pages/HomePage';
 import Onboarding from '@/pages/onboarding/Onboarding';
+import { PasswordCreatePage } from '../pages/PasswordCreatePage';
 import SignupPage from '@/pages/SignupPage';
 import GoogleCallback from '@/components/common/Signup/callbckPage';
 
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: 'onboarding',
         element: <Onboarding />,
+      },
+      {
+        path: 'reset-password',
+        element: <PasswordCreatePage />,
       },
       { path: 'signup', element: <SignupPage /> },
       { path: '/api/v1/auth/google/callback', element: <GoogleCallback /> },

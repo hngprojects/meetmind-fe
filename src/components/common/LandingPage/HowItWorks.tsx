@@ -1,8 +1,10 @@
-import beforeInterview from './images/before-the-interview-frame.svg';
-import duringInterview from './images/during-the-interview-frame.svg';
-import afterInterview from './images/after-the-interview-frame.svg';
-import interviewSmarter from './images/interview-image.jpg';
-import checkIcon from './images/checkmark.svg';
+import {
+  beforeInterview,
+  duringInterview,
+  afterInterview,
+  interviewSmarter,
+  checkIcon,
+} from './assets';
 
 const steps = [
   {
@@ -30,7 +32,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#FFFFFF] py-16">
+    <section id="how-it-works" className="bg-[#FFFFFF] py-16">
       <div className="max-w-7xl flex flex-col mx-auto px-6">
         {/* Section label */}
         <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
@@ -76,10 +78,10 @@ export default function HowItWorks() {
 
         {/* Interview Smarter Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center mt-20 mx-auto gap-8">
-          <div className="max-w-full md:w-97.5 h-72.5 overflow-hidden rounded-xl">
+          <div className="max-w-full h-100 md:w-97.5 md:h-72.5 overflow-hidden rounded-xl">
             <img
               src={interviewSmarter}
-              alt="Interview"
+              alt="Professional conducting a video interview"
               className="w-full h-full object-cover scale-110"
             />
           </div>

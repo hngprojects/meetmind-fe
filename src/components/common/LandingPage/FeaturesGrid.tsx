@@ -1,103 +1,192 @@
-import realTimeScorecard from './images/real-time-scorecard-tracking.svg';
-import preAssignedTask from './images/pre-assigned-task.jpg';
-import roleBriefing from './images/role-briefing-red-flag.svg';
-import structuredSummary from './images/structured-interview.jpg';
-import timedGapAlerts from './images/timed-gap-alert.jpg';
-import zoomMeetTeams from './images/zoom-chrome-image.jpg';
+import {
+  realTimeScorecard,
+  preAssignedTask,
+  roleBriefing,
+  structuredSummary,
+  timedGapAlerts,
+  zoomMeetTeams,
+  archiveIcon,
+  checklistIcon,
+  flagIcon,
+  bookIcon,
+  shieldIcon,
+  videoIcon,
+} from './assets';
 
 export default function FeaturesGrid() {
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="features" className="py-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-20">
         <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
           Features
         </h2>
-        <p className="mt-2 text-sm md:text-md text-[#5E6470] text-center max-w-lg mx-auto">
+        <p className="mt-2 text-md md:text-sm text-[#5E6470] text-center max-w-lg mx-auto">
           Every part of the hiring workflow handled by a single intelligent
           participant.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 md:grid-rows-4 gap-6">
-          {/* Row 1–2 Col 1 (spans 2 rows) */}
-          <div className="row-span-2 bg-white rounded-2xl p-6 flex flex-col">
+        <div className="mt-12 grid grid-cols-1 grid-rows-6 lg:grid-cols-2 lg:grid-rows-4 gap-6">
+          {/* Real Time Score Card */}
+          <div className="lg:row-span-2 bg-white rounded-2xl p-6 flex flex-col justify-between items-center gap-6 lg:gap-4">
             <img
               src={realTimeScorecard}
-              className="w-full h-48 object-cover rounded-lg mb-4"
+              className="w-full h-50 md:h-55 lg:h-50 object-cover rounded-lg mb-4"
               alt="Real-time scorecard tracking interface"
             />
-            <h3 className="font-semibold text-lg">
-              Real-time scorecard tracking
-            </h3>
-            <p className="text-sm text-[#5E6470] mt-2">
-              Live coverage bars for every competency...
-            </p>
+            <div className="flex flex-col items-start">
+              <img
+                src={archiveIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Real-time scorecard tracking
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                Live coverage bars for every competency on your scorecard. Know
+                exactly what's been covered and what hasn't - without taking
+                notes
+              </p>
+            </div>
           </div>
 
-          {/* Row 1 Col 2 */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col">
+          {/* Pre Assigned Task */}
+          <div className="lg:row-start-1 bg-white rounded-2xl p-6 flex flex-col lg:flex-row justify-between lg:justify-center items-center gap-6 lg:gap-16">
             <img
               src={preAssignedTask}
-              className="w-full h-48 object-cover rounded-lg mb-4"
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
               alt="Pre-assigned task queue interface"
             />
-            <h3 className="font-semibold text-lg">Pre-assigned task queue</h3>
-            <p className="text-sm text-[#5E6470] mt-2">
-              Queue instructions before the call begins.
-            </p>
+
+            <div className="w-full">
+              <img
+                src={checklistIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Pre-assigned task queue
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                Queue instructions before the call begins.
+              </p>
+            </div>
+            <img
+              src={preAssignedTask}
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
+              alt="Pre-assigned task queue interface"
+            />
           </div>
 
-          {/* Row 2 Col 2 */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col">
+          {/* Role Briefing */}
+          <div className="lg:row-start-2 bg-white rounded-2xl p-6 flex flex-col justify-between lg:flex-row items-start lg:items-center gap-6 lg:gap-4">
             <img
               src={roleBriefing}
-              className="w-full h-48 object-cover rounded-lg mb-4"
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
               alt="Role briefing & red flags interface"
             />
-            <h3 className="font-semibold text-lg">Role briefing & red flags</h3>
-            <p className="text-sm text-[#5E6470] mt-2">
-              Meet Mind internalizes warning signs...
-            </p>
-          </div>
-
-          {/* Row 3 Col 1 */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col">
+            <div>
+              <img
+                src={flagIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Role briefing & red flags
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                MeetMind internalizes warning signs to watch for.
+              </p>
+            </div>
             <img
-              src={structuredSummary}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-              alt="Structured summary interface"
+              src={roleBriefing}
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
+              alt="Role briefing & red flags interface"
             />
-            <h3 className="font-semibold text-lg">Structured summary</h3>
-            <p className="text-sm text-[#5E6470] mt-2">
-              Organized notes ready immediately after.
-            </p>
           </div>
 
-          {/* Row 4 Col 1 */}
-          <div className="bg-white rounded-2xl p-6 flex flex-col">
-            <img
-              src={timedGapAlerts}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-              alt="Timed gap alerts interface"
-            />
-            <h3 className="font-semibold text-lg">Timed gap alerts</h3>
-            <p className="text-sm text-[#5E6470] mt-2">
-              Flags missed culture fit questions.
-            </p>
-          </div>
-
-          {/* Row 3–4 Col 2 (spans 2 rows) */}
-          <div className="row-span-2 row-start-3 col-start-2 bg-white rounded-2xl p-6 flex flex-col">
+          {/* Zoom, Meet & Team Support */}
+          <div className="lg:row-span-2 lg:row-start-3 lg:col-start-2 bg-white rounded-2xl p-6 flex flex-col items-start gap-6 lg:gap-4">
             <img
               src={zoomMeetTeams}
-              className="w-full h-48 object-cover rounded-lg mb-4"
+              className="w-full h-50 md:h-55 lg:h-50 object-cover rounded-lg mb-4"
               alt="Zoom, Meet & Teams support"
             />
-            <h3 className="font-semibold text-lg">
-              Zoom, Meet & Teams support
-            </h3>
-            <p className="text-sm text-[#5E6470] mt-2">
-              Works wherever you already run interviews.
-            </p>
+            <div>
+              <img
+                src={videoIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Zoom, Meet & Teams support
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                Works wherever you already run interviews. MeetMind joins as a
+                named participant - no recordings required, no integration to
+                install.
+              </p>
+            </div>
+          </div>
+
+          {/* Structured Summary */}
+          <div className="lg:row-start-3 bg-white rounded-2xl p-6 flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
+            <img
+              src={structuredSummary}
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
+              alt="Structured summary interface"
+            />
+            <img
+              src={structuredSummary}
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
+              alt="Structured summary interface"
+            />
+            <div>
+              <img
+                src={bookIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Structured summary
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                Organized notes ready immediately after.
+              </p>
+            </div>
+          </div>
+
+          {/* Timed Gap Alerts */}
+          <div className="lg:row-start-4 bg-white rounded-2xl p-6 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
+            <img
+              src={timedGapAlerts}
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
+              alt="Timed gap alerts interface"
+            />
+            <img
+              src={timedGapAlerts}
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
+              alt="Timed gap alerts interface"
+            />
+            <div>
+              <img
+                src={shieldIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Timed gap alerts
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                Set thresholds to flag missed culture fit questions.
+              </p>
+            </div>
           </div>
         </div>
       </div>

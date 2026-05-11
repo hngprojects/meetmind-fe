@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logo from './images/meetmind-logo.svg';
+import { logo } from './assets';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { label: 'How it works', href: '#how-it-works' },
@@ -40,7 +41,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo + Brand Name */}
         <div className="flex gap-6">
-          <a href="/" className="flex items-center">
+          <a href="#hero" className="flex items-center">
             <img src={logo} alt="MeetMind Logo" className="h-8 w-auto" />
           </a>
           <p className="font-bold text-[24px]">
@@ -62,23 +63,24 @@ export default function Navbar() {
 
           {/* SDK */}
           <div className="relative flex items-center">
-            <a
-              href="#sdk"
+            <button
+              type="button"
               className="flex items-center gap-1 text-[#0F172A] text-sm font-medium cursor-pointer"
+              onClick={() => console.log('SDK menu clicked')}
             >
               <span>SDK</span>
               <ChevronDown className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
 
         {/* Desktop CTA Button */}
-        <a
-          href="#request-early-access"
-          className="hidden md:inline-block px-4 py-2 bg-[#02505E] text-[#FEFEFF] font-semibold rounded-lg text-sm"
+        <Link
+          to="/signup"
+          className="hidden md:inline-block px-4 py-2 bg-[#02505E] text-[#FEFEFF] font-semibold rounded-lg text-sm cursor-pointer"
         >
           Request early access
-        </a>
+        </Link>
 
         {/* Mobile Hamburger Button */}
         <button
@@ -104,16 +106,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <button
-              type="button"
+            <Link
+              to="/signup"
               className="inline-block text-center px-4 py-2 bg-[#02505E] text-[#FEFEFF] font-semibold rounded-lg text-sm"
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                // Handle early access flow
-              }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Request early access
-            </button>
+            </Link>
           </div>
         </div>
       )}

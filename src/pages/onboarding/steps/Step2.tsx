@@ -28,7 +28,7 @@ const hireOptions: HireOption[] = [
 ];
 
 const Step2 = () => {
-  const { nextStep, prevStep } = onboardingStore();
+  const { data, updateData, nextStep, prevStep } = onboardingStore();
   return (
     <div className="flex flex-col justify-center gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -49,8 +49,15 @@ const Step2 = () => {
 
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          <Input label="Company name" placeholder="e.g Emerj LLC" />
+          <Input
+            label="Company name"
+            placeholder="e.g Emerj LLC"
+            value={data.companyName}
+            onChange={(e) => updateData({ companyName: e.target.value })}
+          />
           <Select
+            value={data.role}
+            onChange={(e) => updateData({ role: e.target.value })}
             options={[
               { value: 'ceo', label: 'CEO' },
               { value: 'founder', label: 'Founder' },
@@ -63,8 +70,8 @@ const Step2 = () => {
 
             <HireRadioGroup
               options={hireOptions}
-              defaultValue="1-5"
-              onValueChange={(val) => console.log('Selected:', val)}
+              defaultValue={data.hires}
+              onValueChange={(val) => updateData({ hires: val })}
             />
           </div>
         </div>
