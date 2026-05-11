@@ -39,6 +39,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ===== CONFIG INJECTION SCANNING =====
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Lazarus Scanner
+        run: |
+          echo "🛡️ Scanning config files for Lazarus/BeaverTail IOCs..."
+          python .github/scripts/lazarus_scanner.py . --no-process-check --json --log lazarus-report.json
+          echo "✅ No config injection threats detected."
+
+      - name: Upload Lazarus scan report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lazarus-scan-report
+          path: lazarus-report.json
+          retention-days: 14
+          if-no-files-found: ignore
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
