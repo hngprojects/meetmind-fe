@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { taskList, duo, zoom, chat } from './assets';
 
 export default function HeroSection() {
@@ -30,13 +31,12 @@ export default function HeroSection() {
           />
           {/* Desktop & Tablet View */}
           <div className="hidden mt-10 md:flex md:flex-col lg:flex-row items-center justify-center gap-6">
-            <button
-              type="button"
-              onClick={() => console.log('Get early access clicked')}
+            <Link
+              to="/signup"
               className="px-6 py-3 bg-[#02505E] text-white font-semibold rounded-lg text-base hover:bg-[#FFFFFF] hover:text-[#013A44] hover:border hover:border-[#DADADA] transition-colors cursor-pointer"
             >
               Get early access
-            </button>
+            </Link>
 
             <button
               type="button"
@@ -55,13 +55,12 @@ export default function HeroSection() {
               className="w-12 absolute left-8 md:hidden"
             />
             <div className="flex flex-col items-center gap-6">
-              <button
-                type="button"
-                onClick={() => console.log('Get early access clicked')}
+              <Link
+                to="/signup"
                 className="px-6 py-3 bg-[#02505E] text-white font-semibold rounded-lg text-base hover:bg-[#FFFFFF] hover:text-[#013A44] hover:border hover:border-[#DADADA] transition-colors cursor-pointer"
               >
                 Get early access
-              </button>
+              </Link>
 
               <button
                 type="button"
