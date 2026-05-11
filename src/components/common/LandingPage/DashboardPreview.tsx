@@ -2,7 +2,7 @@ import { dashboardImageDesktop, dashboardImageMobile } from './assets.ts';
 
 export default function DashboardPreview() {
   return (
-    <section className="bg-[#F7F9FB] pb-16">
+    <section className="bg-[#F7F9FB]">
       <div className="flex justify-center max-w-7xl mx-auto px-6">
         {/* Desktop */}
         <img

@@ -28,8 +28,8 @@ const temperatureLevels = [
 export default function TemperatureControl() {
   return (
     <section id="temperature" className="py-16">
-      <div className="max-w-7xl flex flex-col md:flex-row md:gap-24 md:items-start mx-auto px-6 md:px-16">
-        <div className="flex flex-col items-start gap-2">
+      <div className="max-w-7xl flex flex-col lg:flex-row md:gap-16 lg:gap-24 lg:items-start mx-auto px-6 lg:px-16">
+        <div className="flex flex-col items-center lg:items-start gap-2">
           {/* Section heading */}
           <h2 className="text-[#0F172A] text-3xl font-semibold">Temperature</h2>
 
@@ -39,7 +39,7 @@ export default function TemperatureControl() {
           </p>
 
           {/* Description */}
-          <p className="mt-3 text-sm md:text-md text-[#5E6470] max-w-2xl mx-auto">
+          <p className="mt-3 text-sm md:text-md text-[#5E6470] text-center lg:text-start md:max-w-xl lg:max-w-2xl lg:mx-auto">
             Not every interview needs the same level of involvement. Temperature
             lets you dial Meet Mind from completely silent to actively engaged,
             for every role, round, and interviewee style.

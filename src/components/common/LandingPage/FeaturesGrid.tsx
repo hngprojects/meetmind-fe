@@ -25,12 +25,12 @@ export default function FeaturesGrid() {
           participant.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-4 gap-6">
-          {/* Row 1–2 Col 1 (spans 2 rows) */}
-          <div className="row-start-1 row-span-2 bg-white rounded-2xl p-6 flex flex-col items-center gap-4">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-4 gap-6">
+          {/* Real Time Score Card */}
+          <div className="lg:row-span-2 bg-white rounded-2xl p-6 flex flex-col justify-between items-center gap-6 lg:gap-4">
             <img
               src={realTimeScorecard}
-              className="w-full h-50 object-cover rounded-lg mb-4"
+              className="w-full h-50 md:h-55 lg:h-50 object-cover rounded-lg mb-4"
               alt="Real-time scorecard tracking interface"
             />
             <div className="flex flex-col items-start">
@@ -51,9 +51,15 @@ export default function FeaturesGrid() {
             </div>
           </div>
 
-          {/* Row 1 Col 2 */}
-          <div className="row-start-3 md:row-start-1 bg-white rounded-2xl p-6 flex justify-center items-center gap-16">
-            <div>
+          {/* Pre Assigned Task */}
+          <div className="lg:row-start-1 bg-white rounded-2xl p-6 flex flex-col lg:flex-row justify-between lg:justify-center items-center gap-6 lg:gap-16">
+            <img
+              src={preAssignedTask}
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
+              alt="Pre-assigned task queue interface"
+            />
+
+            <div className="w-full">
               <img
                 src={checklistIcon}
                 className="w-10 h-10 object-cover rounded-lg mb-6"
@@ -69,13 +75,18 @@ export default function FeaturesGrid() {
             </div>
             <img
               src={preAssignedTask}
-              className="w-44 h-36 object-cover rounded-xl shrink-0"
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
               alt="Pre-assigned task queue interface"
             />
           </div>
 
-          {/* Row 2 Col 2 */}
-          <div className="row-start-4 md:row-start-2 bg-white rounded-2xl p-6 flex items-center gap-4">
+          {/* Role Briefing */}
+          <div className="lg:row-start-2 bg-white rounded-2xl p-6 flex flex-col justify-between lg:flex-row items-start lg:items-center gap-6 lg:gap-4">
+            <img
+              src={roleBriefing}
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
+              alt="Role briefing & red flags interface"
+            />
             <div>
               <img
                 src={flagIcon}
@@ -92,16 +103,46 @@ export default function FeaturesGrid() {
             </div>
             <img
               src={roleBriefing}
-              className="w-44 h-36 object-cover rounded-xl shrink-0"
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
               alt="Role briefing & red flags interface"
             />
           </div>
 
-          {/* Row 3 Col 1 */}
-          <div className="row-start-7 md:row-start-3 bg-white rounded-2xl p-6 flex items-center gap-8">
+          {/* Zoom, Meet & Team Support */}
+          <div className="lg:row-span-2 lg:row-start-3 lg:col-start-2 bg-white rounded-2xl p-6 flex flex-col items-start gap-6 lg:gap-4">
+            <img
+              src={zoomMeetTeams}
+              className="w-full h-50 md:h-55 lg:h-50 object-cover rounded-lg mb-4"
+              alt="Zoom, Meet & Teams support"
+            />
+            <div>
+              <img
+                src={videoIcon}
+                className="w-10 h-10 object-cover rounded-lg mb-6"
+                alt=""
+                aria-hidden="true"
+              />
+              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
+                Zoom, Meet & Teams support
+              </h3>
+              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
+                Works wherever you already run interviews. MeetMind joins as a
+                named participant - no recordings required, no integration to
+                install.
+              </p>
+            </div>
+          </div>
+
+          {/* Structured Summary */}
+          <div className="lg:row-start-3 bg-white rounded-2xl p-6 flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
             <img
               src={structuredSummary}
-              className="w-44 h-36 object-cover rounded-xl shrink-0"
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
+              alt="Structured summary interface"
+            />
+            <img
+              src={structuredSummary}
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
               alt="Structured summary interface"
             />
             <div>
@@ -120,11 +161,16 @@ export default function FeaturesGrid() {
             </div>
           </div>
 
-          {/* Row 4 Col 1 */}
-          <div className="row-start-8 md:row-start-4 bg-white rounded-2xl p-6 flex items-center gap-8">
+          {/* Timed Gap Alerts */}
+          <div className="lg:row-start-4 bg-white rounded-2xl p-6 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
             <img
               src={timedGapAlerts}
-              className="w-44 h-36 object-cover rounded-xl shrink-0"
+              className="hidden lg:w-44 lg:h-36 lg:object-cover lg:rounded-xl lg:shrink-0 lg:block"
+              alt="Timed gap alerts interface"
+            />
+            <img
+              src={timedGapAlerts}
+              className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
               alt="Timed gap alerts interface"
             />
             <div>
@@ -139,31 +185,6 @@ export default function FeaturesGrid() {
               </h3>
               <p className="text-sm md:text-lg text-[#3F4555] mt-2">
                 Set thresholds to flag missed culture fit questions.
-              </p>
-            </div>
-          </div>
-
-          {/* Row 3–4 Col 2 (spans 2 rows) */}
-          <div className="row-start-5 row-span-2 md:row-start-3 md:col-start-2 bg-white rounded-2xl p-6 flex flex-col items-start gap-4">
-            <img
-              src={zoomMeetTeams}
-              className="w-full h-50 object-cover rounded-lg mb-4"
-              alt="Zoom, Meet & Teams support"
-            />
-            <div>
-              <img
-                src={videoIcon}
-                className="w-10 h-10 object-cover rounded-lg mb-6"
-                alt=""
-                aria-hidden="true"
-              />
-              <h3 className="text-[#0F172A] text-sm md:text-lg font-bold leading-tight">
-                Zoom, Meet & Teams support
-              </h3>
-              <p className="text-sm md:text-lg text-[#3F4555] mt-2">
-                Works wherever you already run interviews. MeetMind joins as a
-                named participant - no recordings required, no integration to
-                install.
               </p>
             </div>
           </div>
