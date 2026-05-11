@@ -13,7 +13,7 @@ const PASSWORD_RULES = [
   },
   {
     id: 'uppercase',
-    label: 'Upper case letter (A-Z)',
+    label: 'Upper case letters (A-Z)',
     test: (pw: string) => /[A-Z]/.test(pw),
   },
   {
