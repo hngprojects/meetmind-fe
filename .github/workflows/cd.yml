@@ -37,7 +37,7 @@ jobs:
 
       - name: Build (staging)
         env:
-          VITE_API_BASE_URL: https://api.staging.meetmind.hng14.com
+          VITE_API_BASE_URL: https://api.staging.meetmind.hng14.com/api
         run: pnpm build
 
       - name: Setup SSH
@@ -87,7 +87,7 @@ jobs:
 
       - name: Build (production)
         env:
-          VITE_API_BASE_URL: https://api.meetmind.hng14.com
+          VITE_API_BASE_URL: https://api.meetmind.hng14.com/api
         run: pnpm build
 
       - name: Setup SSH
