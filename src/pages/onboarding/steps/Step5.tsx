@@ -2,7 +2,7 @@ import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft, LayoutGrid, Bot, Contact, Zap } from 'lucide-react';
-import Card from '../components/Card';
+import Card from '../../../components/onboarding/Card';
 
 const Step5 = () => {
   const { nextStep, prevStep } = onboardingStore();

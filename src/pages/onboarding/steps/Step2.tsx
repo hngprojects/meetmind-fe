@@ -2,9 +2,12 @@ import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft } from 'lucide-react';
-import { HireRadioGroup, type HireOption } from '../components/RadioCard';
-import Input from '../components/Input';
-import Select from '../components/Select';
+import {
+  HireRadioGroup,
+  type HireOption,
+} from '../../../components/onboarding/RadioCard';
+import Input from '../../../components/onboarding/Input';
+import Select from '../../../components/onboarding/Select';
 
 const hireOptions: HireOption[] = [
   {

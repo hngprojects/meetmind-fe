@@ -2,8 +2,8 @@ import MeetmindLogo from '@/assets/onboarding/MeetmindLogo.svg';
 import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft } from 'lucide-react';
-import TonePicker from '../components/TonePicker';
-import { ToggleCard } from '../components/ToggleCard';
+import TonePicker from '../../../components/onboarding/TonePicker';
+import { ToggleCard } from '../../../components/onboarding/ToggleCard';
 import { useState } from 'react';
 
 interface Preferences {

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { onboardingStore } from '@/store/onboardingStore';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
-import { IntegrationCard } from '../components/IntegrationCard';
+import { IntegrationCard } from '../../../components/onboarding/IntegrationCard';
 import GoogleLogo from '@/assets/onboarding/Google.svg';
 import ZoomLogo from '@/assets/onboarding/Google.svg';
 
@@ -27,39 +27,40 @@ const Step4 = () => {
           <p className="font-medium text-center max-w-sm">
             MeetMind AI needs to join your calls. Connect at least one platform
           </p>
-
-          <div className="w-full space-y-3 mb-8">
-            <IntegrationCard
-              name="Google Meet"
-              logo={<img src={GoogleLogo} alt="Google" />}
-              isConnected={connections.google}
-              onConnect={() =>
-                setConnections((prev) => ({ ...prev, google: true }))
-              }
-            />
-            <IntegrationCard
-              name="Zoom"
-              logo={<img src={ZoomLogo} alt="Zoom" />}
-              isConnected={connections.zoom}
-              onConnect={() =>
-                setConnections((prev) => ({ ...prev, zoom: true }))
-              }
-            />
-          </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2 items-center">
-        <Button
-          onClick={nextStep}
-          size="lg"
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-        >
-          Continue
-        </Button>
-        <Button onClick={prevStep} variant="ghost" className="w-fit">
-          <ArrowLeft></ArrowLeft>
-          Back
-        </Button>
+      <div className="flex flex-col gap-6">
+        <div className="w-full space-y-3 mb-8">
+          <IntegrationCard
+            name="Google Meet"
+            logo={<img src={GoogleLogo} alt="Google" />}
+            isConnected={connections.google}
+            onConnect={() =>
+              setConnections((prev) => ({ ...prev, google: true }))
+            }
+          />
+          <IntegrationCard
+            name="Zoom"
+            logo={<img src={ZoomLogo} alt="Zoom" />}
+            isConnected={connections.zoom}
+            onConnect={() =>
+              setConnections((prev) => ({ ...prev, zoom: true }))
+            }
+          />
+        </div>
+        <div className="flex flex-col gap-2 items-center">
+          <Button
+            onClick={nextStep}
+            size="lg"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+          >
+            Continue
+          </Button>
+          <Button onClick={prevStep} variant="ghost" className="w-fit">
+            <ArrowLeft></ArrowLeft>
+            Back
+          </Button>
+        </div>
       </div>
     </div>
   );
