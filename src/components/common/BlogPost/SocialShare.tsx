@@ -1,0 +1,20 @@
+import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
+
+export default function SocialShare() {
+  return (
+    <div className="flex items-center w-full my-10">
+      <button className="flex-1 flex items-center justify-center gap-2 py-8 border-t border-b-2 border-t-gray-100 border-b-[#3b5998] text-[#3b5998] hover:bg-gray-50 transition-colors text-sm font-medium uppercase tracking-wider cursor-pointer">
+        <FaFacebookF className="text-lg" />
+        <span>Share 694</span>
+      </button>
+      <button className="flex-1 flex items-center justify-center gap-2 py-8 border-t border-b-2 border-t-gray-100 border-b-sky-400 text-sky-500 hover:bg-gray-50 transition-colors text-sm font-medium uppercase tracking-wider cursor-pointer">
+        <FaTwitter className="text-lg" />
+        <span>Tweet</span>
+      </button>
+      <button className="flex-1 flex items-center justify-center gap-2 py-8 border-t border-b-2 border-t-gray-100 border-b-red-600 text-gray-500 hover:bg-gray-50 transition-colors text-sm font-medium uppercase tracking-wider cursor-pointer">
+        <FaPinterestP className="text-red-600 text-lg" />
+        <span>694</span>
+      </button>
+    </div>
+  );
+}

@@ -4,6 +4,8 @@ import roleBriefing from '../../../assets/icons/role-briefing-red-flag.svg';
 import structuredSummary from '../../../assets/images/structured-interview.jpg';
 import timedGapAlerts from '../../../assets/images/timed-gap-alert.jpg';
 import zoomMeetTeams from '../../../assets/images/zoom-chrome-image.jpg';
+import blogPostImage from '../../../assets/images/blogpostimage.png';
+
 
 import archiveIcon from '../../../assets/icons/archive-icon.svg';
 import checklistIcon from '../../../assets/icons/checklist-icon.svg';
@@ -76,4 +78,6 @@ export {
   kristin,
   bessie,
   quoteIcon,
+  blogPostImage,
 };
+
