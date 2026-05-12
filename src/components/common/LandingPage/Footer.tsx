@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
   logo,
-
   linkedinIcon,
   facebookIcon,
   githubIcon,
@@ -37,7 +36,7 @@ const footerColumns = [
     title: 'Company',
     links: [
       { label: 'About Us', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'Contact', href: '/contact' },
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
     ],
@@ -61,7 +60,11 @@ export default function Footer() {
           <div className="max-w-xs md:max-w-lg lg:max-w-xs flex flex-col items-start md:items-center lg:items-start">
             <div className="flex gap-2 items-center">
               <a href="#hero" className="flex items-center">
-                <img src={logo} alt="MeetMind Logo" className="h-6 w-auto md:h-8" />
+                <img
+                  src={logo}
+                  alt="MeetMind Logo"
+                  className="h-6 w-auto md:h-8"
+                />
               </a>
               <p className="font-bold text-xl md:text-2xl text-[#035A69]">
                 Meet<span className="text-[#4F46E5]">Mind</span>
@@ -97,24 +100,13 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      {link.href.startsWith('/') ? (
-                        <Link
-                          to={link.href}
-                          className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left"
-                        >
-                          {link.label}
-                        </Link>
-                      ) : (
-                        <button
-                          type="button"
-                          className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer"
-                          onClick={() => console.log(`${link.label} clicked`)}
-                        >
-                          {link.label}
-                        </button>
-                      )}
+                      <Link
+                        to={link.href}
+                        className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer block"
+                      >
+                        {link.label}
+                      </Link>
                     </li>
-
                   ))}
                 </ul>
               </div>
