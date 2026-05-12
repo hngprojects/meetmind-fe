@@ -3,7 +3,7 @@ import signupBg from '@/assets/images/signupBg.png';
 
 export default function HeroSection() {
   return (
-    <section className="relative hidden w-1/2 flex-shrink-0 flex-col items-start justify-center bg-slate-900 px-14 py-10 md:flex">
+    <section className="relative hidden w-1/2 shrink-0 flex-col items-start justify-center bg-slate-900 px-14 py-10 md:flex">
       <img
         src={signupBg}
         alt=""
