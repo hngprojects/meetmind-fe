@@ -1,4 +1,41 @@
+@import 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap';
 @import 'tailwindcss';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+@media (width >=768px) {
+  .scale:hover {
+    transform: scale(1.05);
+    transition-duration: 150ms;
+  }
+
+  .scale:active {
+    transform: translateY(10%);
+    transform: scale(0.9);
+    transition-duration: 150ms;
+  }
+}
 
 /* ─── Geist Variable Font ─────────────────────────────────────────── */
 @font-face {
@@ -21,6 +58,7 @@
 @theme inline {
   /* Typography */
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', serif;
 
   /* Border radius */
   --radius: 0.5rem;
