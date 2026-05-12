@@ -29,14 +29,14 @@ const wideTestimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="temperature" className="py-16">
+    <section id="temperature" className="py-16 bg-[#E6F0F1]">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="flex flex-col items-center gap-4">
-          <p className="text-[#3F4555] text-xs">Testimonials</p>
-          <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
+          <p className="text-[#3F4555] text-[14px]">Testimonials</p>
+          <h2 className="text-[#0F172A] text-[36px] font-semibold text-center">
             Loved by Remote Teams
           </h2>
-          <p className="text-[#3F4555] text-xs text-center max-w-md">
+          <p className="text-[#3F4555] max-w-md md:max-w-183 text-[16px] lg:text-[18px] text-center">
             Polio is the customer relationship management tool for everyone who
             values collaboration.
           </p>

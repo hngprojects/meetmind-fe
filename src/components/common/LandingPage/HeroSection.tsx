@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="bg-[#F7F9FB] pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <div className="flex justify-center items-start md:gap-18">
+        <div className="flex justify-center items-start">
           <img
             src={taskList}
             alt="Task List Star"

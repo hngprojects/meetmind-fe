@@ -27,19 +27,21 @@ const temperatureLevels = [
 
 export default function TemperatureControl() {
   return (
-    <section id="temperature" className="py-12">
-      <div className="max-w-7xl flex flex-col lg:flex-row md:gap-16 lg:gap-24 lg:items-start mx-auto px-6 lg:px-16">
-        <div className="flex flex-col items-center lg:items-start gap-2">
+    <section id="temperature" className="pt-4 pb-10 lg:pt-16 lg:pb-32">
+      <div className="max-w-7xl flex flex-col lg:flex-row md:gap-16 lg:gap-16 lg:items-start mx-auto px-6">
+        <div className="flex flex-col items-center lg:items-start lg:max-w-118.5 gap-2">
           {/* Section heading */}
-          <h2 className="text-[#0F172A] text-3xl font-semibold">Temperature</h2>
+          <h2 className="text-[#0F172A] text-[30px] md:text-[40px] font-semibold">
+            Temperature
+          </h2>
 
           {/* Subheading */}
-          <p className="text-[#0F172A] text-sm font-semibold mt-1">
+          <p className="text-[#0F172A] text-[18px] font-semibold mt-1">
             You set how present it is
           </p>
 
           {/* Description */}
-          <p className="mt-3 text-sm md:text-md text-[#5E6470] text-center lg:text-start md:max-w-xl lg:max-w-2xl lg:mx-auto">
+          <p className="mt-3 text-[16px] text-[#5E6470] text-center lg:text-start md:max-w-118.5 max-w-86 lg:max-w-118.5 lg:mx-auto">
             Not every interview needs the same level of involvement. Temperature
             lets you dial Meet Mind from completely silent to actively engaged,
             for every role, round, and interviewee style.
@@ -47,7 +49,7 @@ export default function TemperatureControl() {
         </div>
 
         {/* Four level cards */}
-        <div className="mt-24 md:mt-0 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-24 md:mt-0 grid grid-cols-1 md:grid-cols-2 lg:max-w-176.5 gap-6">
           {temperatureLevels.map((level) => (
             <div
               key={level.number}

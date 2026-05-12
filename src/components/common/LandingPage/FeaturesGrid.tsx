@@ -15,19 +15,19 @@ import {
 
 export default function FeaturesGrid() {
   return (
-    <section id="features" className="py-12">
-      <div className="max-w-7xl mx-auto px-6 md:px-20">
-        <h2 className="text-[#0F172A] text-3xl font-semibold text-center">
+    <section id="features" className="pt-28 pb-18">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-[#0F172A] text-[30px] md:text-[40px] font-semibold text-center">
           Features
         </h2>
-        <p className="mt-2 text-md md:text-sm text-[#5E6470] text-center max-w-lg mx-auto">
+        <p className="mt-2 text-[16px] text-[#5E6470] text-center max-w-86 md:max-w-140.25 mx-auto">
           Every part of the hiring workflow handled by a single intelligent
           participant.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 grid-rows-6 lg:grid-cols-2 lg:grid-rows-4 gap-6">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-4 gap-6">
           {/* Real Time Score Card */}
-          <div className="lg:row-span-2 bg-white rounded-2xl p-6 flex flex-col justify-between items-center gap-6 lg:gap-4">
+          <div className="lg:row-span-2 bg-white rounded-2xl p-6 flex flex-col justify-between items-center gap-6 lg:col-start-1 lg:gap-4">
             <img
               src={realTimeScorecard}
               className="w-full h-50 md:h-55 lg:h-50 object-cover rounded-lg mb-4"
@@ -52,7 +52,7 @@ export default function FeaturesGrid() {
           </div>
 
           {/* Pre Assigned Task */}
-          <div className="lg:row-start-1 bg-white rounded-2xl p-6 flex flex-col lg:flex-row justify-between lg:justify-center items-center gap-6 lg:gap-16">
+          <div className="lg:row-start-1 lg:col-start-2 bg-white rounded-2xl p-6 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-16">
             <img
               src={preAssignedTask}
               className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
@@ -62,7 +62,7 @@ export default function FeaturesGrid() {
             <div className="w-full">
               <img
                 src={checklistIcon}
-                className="w-10 h-10 object-cover rounded-lg mb-6"
+                className="w-10 h-10 object-cover rounded-lg mb-3"
                 alt=""
                 aria-hidden="true"
               />
@@ -81,7 +81,7 @@ export default function FeaturesGrid() {
           </div>
 
           {/* Role Briefing */}
-          <div className="lg:row-start-2 bg-white rounded-2xl p-6 flex flex-col justify-between lg:flex-row items-start lg:items-center gap-6 lg:gap-4">
+          <div className="lg:row-start-2 lg:col-start-2 bg-white rounded-2xl p-6 flex flex-col justify-between lg:flex-row items-start lg:items-center gap-6 lg:gap-4">
             <img
               src={roleBriefing}
               className="block w-full h-50 md:h-55 lg:h-50 object-cover rounded-xl shrink-0 lg:hidden"
