@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   logo,
   linkedinIcon,
@@ -38,7 +39,7 @@ const footerColumns = [
     title: 'Company',
     links: [
       { label: 'About Us', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'Contact', href: '/contact' },
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
     ],
@@ -97,13 +98,12 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <button
-                        type="button"
-                        className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer"
-                        onClick={() => console.log(`${link.label} clicked`)}
+                      <Link
+                        to={link.href}
+                        className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer block"
                       >
                         {link.label}
-                      </button>
+                      </Link>
                     </li>
                   ))}
                 </ul>
