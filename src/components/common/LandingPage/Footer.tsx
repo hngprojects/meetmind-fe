@@ -8,25 +8,25 @@ import {
 
 const footerColumns = [
   {
-    title: 'Product',
+    title: 'PRODUCT',
     links: [
       { label: 'Features', href: '#' },
-      { label: 'Use Cases', href: '#' },
+      { label: 'Integration', href: '#' },
       { label: 'Pricing', href: '#' },
-      { label: 'ChangeLog', href: '#' },
+      { label: 'Changelog', href: '#' },
     ],
   },
   {
-    title: 'Developers',
+    title: 'COMPANY',
     links: [
-      { label: 'SDK', href: '#' },
-      { label: 'Documentation', href: '#' },
-      { label: 'API Reference', href: '#' },
-      { label: 'GitHub', href: '#' },
+      { label: 'About Us', href: '#' },
+      { label: 'Contact Us', href: '#' },
+      { label: 'Careers', href: '#' },
+      { label: 'News', href: '#' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'RESOURCES',
     links: [
       { label: 'Blog', href: '#' },
       { label: 'Help Center', href: '#' },
@@ -35,26 +35,24 @@ const footerColumns = [
     ],
   },
   {
-    title: 'Company',
+    title: 'LEGAL',
     links: [
-      { label: 'About Us', href: '#' },
-      { label: 'Contact', href: '#' },
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
+      { label: 'Cookie Policy', href: '#' },
+      { label: 'Security', href: '#' },
     ],
   },
 ];
 
 const socialLinks = [
+  { name: 'Instagram', icon: instagramIcon, href: '#' },
   { name: 'LinkedIn', icon: linkedinIcon, href: '#' },
   { name: 'Facebook', icon: facebookIcon, href: '#' },
   { name: 'GitHub', icon: githubIcon, href: '#' },
-  { name: 'Instagram', icon: instagramIcon, href: '#' },
 ];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-12 border-t border-[#E1E3E4]">
@@ -117,7 +115,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="mt-8 text-center text-[#64748B] text-xs">
-          ©{currentYear} MeetMind LTD. All rights reserved.
+          ©2026 MeetMind LTD. All rights reserved.
         </p>
       </div>
     </footer>
