@@ -40,9 +40,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff] border-b border-gray-100">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo + Brand Name */}
-        <div className="flex gap-6">
+        <div className="flex gap-3">
           <a href="#hero" className="flex items-center">
-            <img src={logo} alt="MeetMind Logo" className="h-8 w-auto" />
+            <img src={logo} alt="MeetMind Logo" className="h-10 w-auto" />
           </a>
           <p className="font-bold text-[24px]">
             Meet<span className="text-[#4F46E5]">Mind</span>
