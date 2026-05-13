@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import ScrollToTop from '@/components/common/ScrollToTop';
 
 /**
  * Root layout — wraps all pages.
@@ -7,6 +8,7 @@ import { Outlet } from 'react-router-dom';
 export function RootLayout() {
   return (
     <div className="min-h-screen bg-background font-sans antialiased">
+      <ScrollToTop />
       <main>
         <Outlet />
       </main>
