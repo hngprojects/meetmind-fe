@@ -3,6 +3,7 @@ import { RootLayout } from './layouts/RootLayout';
 import { HomePage } from '../pages/HomePage';
 import { PasswordCreatePage } from '../pages/PasswordCreatePage';
 import SignupPage from '@/pages/SignupPage';
+import { BlogPost } from '@/pages/BlogPost';
 import GoogleCallback from '@/components/common/Signup/callbckPage';
 
 // FIXED IMPORT: No need for /Index.tsx
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
 
       // Your new route!
       { path: 'contact', element: <ContactPage /> },
+      { path: 'blog', element: <BlogPost /> },
     ],
   },
   // {

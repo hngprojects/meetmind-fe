@@ -11,9 +11,8 @@ const footerColumns = [
   {
     title: 'Product',
     links: [
-      { label: 'Features', href: '#' },
-      { label: 'Use Cases', href: '#' },
-      { label: 'Pricing', href: '#' },
+      { label: 'How it Works', href: '/#how-it-works' },
+      { label: 'Pricing', href: '/#pricing' },
       { label: 'ChangeLog', href: '#' },
     ],
   },
@@ -29,10 +28,8 @@ const footerColumns = [
   {
     title: 'Resources',
     links: [
-      { label: 'Blog', href: '#' },
+      { label: 'Blog', href: '/blog' },
       { label: 'Help Center', href: '#' },
-      { label: 'Case Studies', href: '#' },
-      { label: 'Tutorials', href: '#' },
     ],
   },
   {
@@ -47,10 +44,10 @@ const footerColumns = [
 ];
 
 const socialLinks = [
+  { name: 'Instagram', icon: instagramIcon, href: '#' },
   { name: 'LinkedIn', icon: linkedinIcon, href: '#' },
   { name: 'Facebook', icon: facebookIcon, href: '#' },
   { name: 'GitHub', icon: githubIcon, href: '#' },
-  { name: 'Instagram', icon: instagramIcon, href: '#' },
 ];
 
 export default function Footer() {
@@ -58,14 +55,18 @@ export default function Footer() {
 
   return (
     <footer className="bg-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-12 border-t border-[#E1E3E4]">
-        <div className="flex flex-col lg:flex-row items-start md:items-center lg:items-start lg:justify-between gap-12">
-          <div className="max-w-xs md:max-w-lg lg:max-w-xs md:flex flex-col md:items-center lg:items-start">
-            <div className="flex gap-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 md:px-12 lg:px-24 py-12 border-t border-[#E1E3E4]">
+        <div className="flex flex-col md:pl-24 lg:flex-row items-start md:items-center lg:items-start lg:justify-between gap-12">
+          <div className="max-w-xs md:max-w-lg lg:max-w-xs flex flex-col items-start md:items-center lg:items-start">
+            <div className="flex gap-2 items-center">
               <a href="#hero" className="flex items-center">
-                <img src={logo} alt="MeetMind Logo" className="h-8 w-auto" />
+                <img
+                  src={logo}
+                  alt="MeetMind Logo"
+                  className="h-6 w-auto md:h-8"
+                />
               </a>
-              <p className="font-bold text-[24px]">
+              <p className="font-bold text-xl md:text-2xl text-[#035A69]">
                 Meet<span className="text-[#4F46E5]">Mind</span>
               </p>
             </div>
@@ -73,6 +74,7 @@ export default function Footer() {
               MeetMind joins your call, tracks coverage, and delivers a
               structured summary instantly.
             </p>
+
             {/* Social icons */}
             <div className="flex items-center gap-4 mt-6">
               {socialLinks.map((social) => (
@@ -80,7 +82,7 @@ export default function Footer() {
                   key={social.name}
                   href={social.href}
                   aria-label={social.name}
-                  className="opacity-60 hover:opacity-100 transition-opacity"
+                  className="opacity-40 hover:opacity-100 transition-opacity"
                 >
                   <img src={social.icon} alt="" className="w-5 h-5" />
                 </a>
@@ -98,12 +100,21 @@ export default function Footer() {
                 <ul className="space-y-3">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link
-                        to={link.href}
-                        className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer block"
-                      >
-                        {link.label}
-                      </Link>
+                      {link.href.startsWith('/') && !link.href.includes('#') ? (
+                        <Link
+                          to={link.href}
+                          className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer block"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={link.href}
+                          className="text-[#3F4555] text-sm hover:text-[#3F4555]/40 transition-colors text-left cursor-pointer block"
+                        >
+                          {link.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
