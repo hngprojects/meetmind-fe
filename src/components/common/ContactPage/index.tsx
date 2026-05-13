@@ -49,7 +49,7 @@ export default function ContactPage() {
 
   const onSubmitNewsletter = async (data: NewsletterFormData) => {
     try {
-      const response = await api.post('/subscriptions/email', data);
+      const response = await api.post('/subscription/email', data);
       console.log('Newsletter subscription successful:', response.data);
       toast.success('Thanks for subscribing!');
       resetNewsletter();
