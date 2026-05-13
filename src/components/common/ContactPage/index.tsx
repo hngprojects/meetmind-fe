@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
+import api from '@/lib/api';
 import messageCircleIcon from '@/assets/icons/message-circle.svg';
+import toast from 'react-hot-toast';
 
 interface ContactFormData {
   name: string;
@@ -8,16 +10,55 @@ interface ContactFormData {
   message: string;
 }
 
+interface NewsletterFormData {
+  email: string;
+}
+
 export default function ContactPage() {
+  //  MAIN CONTACT FORM HOOK
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormData>();
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log('Form Data Submitted:', data);
-    // placeholder for API call trigger, pending...
+  //  NEWSLETTER FORM HOOK
+  const {
+    register: registerNewsletter,
+    handleSubmit: handleNewsletterSubmit,
+    reset: resetNewsletter,
+    formState: {
+      errors: newsletterErrors,
+      isSubmitting: isNewsletterSubmitting,
+    },
+  } = useForm<NewsletterFormData>();
+
+  // --- SUBMIT HANDLERS ---
+  const onSubmitContact = async (data: ContactFormData) => {
+    try {
+      const response = await api.post('/support/contact', data);
+      console.log('Successfully sent:', response.data);
+      toast.success('Message sent successfully! We will get back to you soon.');
+      reset();
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error('There was an error sending your message. Please try again.');
+    }
+  };
+
+  const onSubmitNewsletter = async (data: NewsletterFormData) => {
+    try {
+      const response = await api.post('/subscriptions/email', data);
+      console.log('Newsletter subscription successful:', response.data);
+      toast.success('Thanks for subscribing!');
+      resetNewsletter();
+    } catch (error) {
+      console.error('Newsletter error:', error);
+      toast.error(
+        'There was an error subscribing to the newsletter. Please try again.'
+      );
+    }
   };
 
   return (
@@ -34,7 +75,7 @@ export default function ContactPage() {
 
       {/* Form & Info Container */}
       <div className="p-6 md:p-8 mb-16 w-full max-w-3xl bg-white rounded-xl border border-gray-100 shadow-sm">
-        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="space-y-6" onSubmit={handleSubmit(onSubmitContact)}>
           <div>
             <label className="block mb-1 text-sm font-medium text-gray-700">
               Name
@@ -111,9 +152,10 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="py-3 w-full font-medium text-white bg-[#0A4C57] rounded-md transition-colors hover:bg-teal-900"
+            disabled={isSubmitting}
+            className="py-3 w-full font-medium text-white bg-[#0A4C57] rounded-md transition-colors hover:bg-teal-900 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
           <p className="mt-2 text-xs text-center text-gray-400">
             We typically respond within 24 hours
@@ -126,7 +168,6 @@ export default function ContactPage() {
           </h3>
           <div className="flex flex-col space-y-4 text-sm text-gray-600">
             <p className="flex gap-3 items-center">
-              {/* I used svg since the icons in the figma file has been flattened and they can't be extracted */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -169,19 +210,37 @@ export default function ContactPage() {
           Get notified when we ship new features and improvements.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 p-3 w-full bg-white text-center rounded-md focus:outline-none"
-          />
-          <button
-            type="button"
-            className="px-6 py-3 w-full sm:w-auto font-medium text-gray-900 bg-gray-200 rounded-md transition-colors hover:bg-white"
-          >
-            Subscribe
-          </button>
-        </div>
+        <form
+          onSubmit={handleNewsletterSubmit(onSubmitNewsletter)}
+          className="flex flex-col w-full max-w-md"
+        >
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className={`flex-1 p-3 w-full bg-white text-center sm:text-left rounded-md focus:outline-none ${newsletterErrors.email ? 'border-2 border-red-400' : ''}`}
+              {...registerNewsletter('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: 'Invalid email address',
+                },
+              })}
+            />
+            <button
+              type="submit"
+              disabled={isNewsletterSubmitting}
+              className="px-6 py-3 w-full sm:w-auto font-medium text-gray-900 bg-gray-200 rounded-md transition-colors hover:bg-white disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {isNewsletterSubmitting ? 'Subscribing...' : 'Subscribe'}
+            </button>
+          </div>
+          {newsletterErrors.email && (
+            <span className="text-sm text-red-200 mt-2 text-center sm:text-left">
+              {newsletterErrors.email.message}
+            </span>
+          )}
+        </form>
       </div>
     </div>
   );
