@@ -21,11 +21,11 @@ export const router = createBrowserRouter([
         element: <ForgotPasswordPage />,
       },
       {
-        path: 'reset-password',
+        path: 'reset-password-2',
         element: <ResetPasswordPage />,
       },
       {
-        path: 'create-password',
+        path: 'reset-password',
         element: <PasswordCreatePage />,
       },
       { path: 'signup', element: <SignupPage /> },
