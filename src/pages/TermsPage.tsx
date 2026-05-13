@@ -6,7 +6,7 @@ import NewsletterSection from '../components/common/Terms/NewsletterSection';
 
 export default function TermsPage() {
   return (
-    <div className="bg-[#F7F9FB] min-h-screen pt-16">
+    <div className="bg-white min-h-screen pt-16">
       <Navbar />
       <main>
         <TermsContent />
