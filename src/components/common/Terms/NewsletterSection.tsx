@@ -4,7 +4,7 @@ const NewsletterSection = () => {
   return (
     <section className="bg-[#02505E] py-16 mt-16 px-4 md:px-0">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center justify-center text-center">
-        <h2 className="text-[32px] md:text-[40px] font-serif text-white mb-8">
+        <h2 className="text-[32px] md:text-[40px] font-sans text-white mb-8">
           Never miss an update
         </h2>
         <div className="flex flex-col sm:flex-row w-full max-w-md gap-4">
