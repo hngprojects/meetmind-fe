@@ -4,7 +4,7 @@ export default function CTASection() {
   return (
     <section
       id="request-early-access"
-      className="py-10 px-4 md:px-0 md:py-15 lg:py-20 bg-[#FEFEFF]"
+      className="py-10 px-4 md:px-8 md:py-15 lg:py-20 bg-[#FEFEFF]"
     >
       <div className="relative overflow-hidden max-w-sm md:max-w-2xl lg:max-w-5xl rounded-2xl mx-auto px-16 md:px-24 py-8 md:py-16 bg-[#036475] text-center">
         <img

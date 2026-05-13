@@ -7,6 +7,7 @@ import GoogleCallback from '@/components/common/Signup/callbckPage';
 
 // FIXED IMPORT: No need for /Index.tsx
 import ContactPage from '@/components/common/ContactPage';
+import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
 
       // Your new route!
       { path: 'contact', element: <ContactPage /> },
+      { path: 'privacy-policy', element: <PrivacyPolicyPage /> },
     ],
   },
   // {
