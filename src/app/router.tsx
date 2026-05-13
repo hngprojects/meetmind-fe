@@ -4,6 +4,7 @@ import { HomePage } from '../pages/HomePage';
 import { PasswordCreatePage } from '../pages/PasswordCreatePage';
 import SignupPage from '@/pages/SignupPage';
 import GoogleCallback from '@/components/common/Signup/callbckPage';
+import TermsPage from '../pages/TermsPage';
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
         element: <PasswordCreatePage />,
       },
       { path: 'signup', element: <SignupPage /> },
+      { path: 'terms', element: <TermsPage /> },
       { path: '/api/v1/auth/google/callback', element: <GoogleCallback /> },
     ],
   },
